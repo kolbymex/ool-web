@@ -119,7 +119,7 @@ h1 em{font-style:italic;color:var(--gold)}
 .slide{position:relative;flex:0 0 100%;height:100%;background:var(--bot,#081820)}
 .slide::before{content:"";position:absolute;left:0;right:0;top:0;height:calc(59 * var(--u));background:linear-gradient(90deg,var(--sb-side,#102227),var(--sb-mid,#1D2B29) 50%,var(--sb-side,#102227))}
 .cap-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
-.cap-list button{all:unset;cursor:pointer;display:flex;flex-direction:column;gap:4px;padding:14px 18px;border-radius:16px;border-left:2px solid transparent;transition:background .3s,border-color .3s}
+.cap-list button{all:unset;box-sizing:border-box;width:100%;cursor:pointer;display:flex;flex-direction:column;gap:4px;padding:14px 18px;border-radius:16px;border-left:2px solid transparent;transition:background .3s,border-color .3s}
 .cap-list button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 .cap-list b{font-family:var(--serif);font-weight:400;font-size:22px;color:var(--muted);transition:color .3s}
 .cap-list span{font-size:15px;line-height:1.5;color:var(--muted);opacity:.75;transition:color .3s,opacity .3s}
