@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="es">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="icon" href="../colabora/assets/icona.svg" type="image/svg+xml">
+<title>Aviso de privacidad ÓOL</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Aviso de privacidad de las postulaciones de voces y música de ÓOL.">
+<style>
+/* Un documento da leggere: una colonna stretta, sezioni con un'etichetta, i dati del responsabile in evidenza.
+   Palette "Notte tropicale" del sito di ÓOL, un solo tema scuro voluto. Nessun carattere esterno:
+   una pagina sulla privacy non manda l'indirizzo IP di chi la legge a un servizio di font. */
+:root{
+  color-scheme:dark;
+  --bg:#16353F; --bg-2:#112C35; --card:#0F2A33;
+  --gold:#E8B24D; --cream:#F5EFE2; --text:#E6E1D6; --muted:#9FB6B2; --line:rgba(232,178,77,.18);
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{background:var(--bg)}
+body{margin:0;color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;
+  padding-left:max(20px, env(safe-area-inset-left, 0px));padding-right:max(20px, env(safe-area-inset-right, 0px));
+  background:linear-gradient(180deg,var(--bg) 0%,var(--bg-2) 100%);background-color:var(--bg)}
+.wrap{max-width:680px;margin:0 auto;padding-block:40px 64px}
+header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:44px}
+.brand{font-family:var(--serif);font-size:24px;color:var(--cream)}
+.langs{display:flex;gap:2px;border:1px solid var(--line);border-radius:999px;padding:3px}
+.langs button{font:600 12px/1 var(--sans);letter-spacing:.1em;border:0;background:none;color:var(--muted);padding:8px 12px;border-radius:999px;cursor:pointer}
+.langs button[aria-pressed="true"]{background:rgba(232,178,77,.16);color:var(--gold)}
+.langs button:focus-visible,.copy:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.eyebrow{margin:0;font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(34px,6vw,46px);line-height:1.1;color:var(--cream);margin:12px 0 0;text-wrap:balance}
+.lede{margin:16px 0 0;color:var(--muted)}
+.who{margin:32px 0 8px;padding:22px 24px;border-radius:18px;background:var(--card);border:1px solid var(--line);display:grid;gap:6px}
+.who b{font-family:var(--serif);font-weight:400;font-size:21px;color:var(--cream)}
+.mail{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:6px}
+.mail span{font-weight:600;color:var(--cream);user-select:all}
+.copy{font:600 13px/1 var(--sans);border:1px solid var(--line);background:none;color:var(--gold);padding:8px 12px;border-radius:999px;cursor:pointer}
+section{padding-top:26px;margin-top:26px;border-top:1px solid var(--line)}
+h2{font-family:var(--serif);font-weight:400;font-size:22px;color:var(--cream);margin:0 0 8px}
+p{margin:0 0 10px}
+ul{margin:0 0 10px;padding-left:20px}
+li{margin-bottom:4px}
+.date{margin-top:36px;font-size:14px;color:var(--muted)}
+.note{margin-top:8px;font-size:14px;color:var(--muted)}
+</style>
+
+<div class="wrap">
+  <header>
+    <span class="brand">ÓOL</span>
+    <div class="langs" role="group" aria-label="Idioma / Language">
+      <button id="lang-es" data-lang="es">ES</button>
+      <button id="lang-en" data-lang="en">EN</button>
+    </div>
+  </header>
+
+  <!-- ESPAÑOL (versión oficial) -->
+  <article lang="es" data-lang-block="es">
+    <p class="eyebrow">Postulaciones de voces y música</p>
+    <h1>Aviso de privacidad</h1>
+    <p class="lede">Qué datos nos das cuando te postulas como voz guía o como músico de ÓOL, para qué los usamos y cómo puedes pedir que los borremos.</p>
+
+    <div class="who">
+      <span>Responsable de tus datos</span>
+      <b>David Grimaldi</b>
+      <span>Av. Tulum 72, Tulum Centro, C.P. 77780, Tulum, Quintana Roo, México</span>
+      <div class="mail"><span>ool.tulum@gmail.com</span><button class="copy" type="button" data-copy="ool.tulum@gmail.com">Copiar correo</button></div>
+    </div>
+
+    <section>
+      <h2>Qué datos recabamos</h2>
+      <ul>
+        <li>Nombre y apellido o nombre artístico, correo electrónico, país y ciudad.</li>
+        <li>Tu número de WhatsApp, solo en el formulario de voces.</li>
+        <li>Los idiomas en los que grabas, o tus instrumentos y tu género musical.</li>
+        <li>Enlaces a tus redes, a tu sitio web o a tus temas, y lo que nos cuentes de tu experiencia.</li>
+        <li>Los archivos de audio que subes: tu prueba de voz o un fragmento de tu música.</li>
+      </ul>
+      <p>No te pedimos datos personales sensibles. Si eres menor de edad, por favor no envíes tu postulación.</p>
+    </section>
+
+    <section>
+      <h2>Para qué los usamos</h2>
+      <p>Solo para escuchar y evaluar tu postulación, y para contactarte sobre ella por correo electrónico o por WhatsApp.</p>
+      <p>No usamos tu voz ni tu música en la app ÓOL, ni en ningún otro lugar, sin un acuerdo por escrito contigo. No usamos tus datos para publicidad.</p>
+    </section>
+
+    <section>
+      <h2>Con quién los compartimos</h2>
+      <p>Los formularios funcionan con Tally (Tally BV, Bélgica), que guarda las respuestas y los archivos por cuenta nuestra. Para avisarnos de cada postulación y para escribirte usamos el correo electrónico y WhatsApp.</p>
+      <p>Solo David Grimaldi escucha y revisa las postulaciones. No compartimos tus datos con nadie más: no los vendemos ni los cedemos.</p>
+    </section>
+
+    <section>
+      <h2>Cuánto tiempo los guardamos</h2>
+      <p>Si tu postulación no avanza, borramos tus datos y tus archivos, incluidas las copias en nuestro correo y en nuestros equipos, en un plazo máximo de seis meses desde que la recibimos. Si colaboramos, los guardamos mientras dure la colaboración.</p>
+    </section>
+
+    <section>
+      <h2>Tus derechos</h2>
+      <p>En cualquier momento puedes acceder a tus datos, pedirnos que los corrijamos o los borremos, u oponerte a que los usemos (derechos ARCO). También puedes retirar tu consentimiento.</p>
+      <p>Escríbenos a <b>ool.tulum@gmail.com</b> desde el correo con el que te postulaste, con tu nombre y lo que necesitas. Te respondemos en un máximo de 20 días hábiles y, si procede, lo hacemos efectivo en los 15 días hábiles siguientes.</p>
+    </section>
+
+    <section>
+      <h2>Cookies</h2>
+      <p>Esta página no usa cookies. Al llenar el formulario, Tally puede usar las cookies necesarias para que funcione.</p>
+    </section>
+
+    <section>
+      <h2>Cambios a este aviso</h2>
+      <p>Si este aviso cambia, publicaremos la nueva versión en esta misma página, con su fecha.</p>
+    </section>
+
+    <p class="date">Última actualización: 29 de octubre de 2026.</p>
+  </article>
+
+  <!-- ENGLISH -->
+  <article lang="en" data-lang-block="en" hidden>
+    <p class="eyebrow">Applying as a voice artist or musician</p>
+    <h1>Privacy notice</h1>
+    <p class="lede">What data you give us when you apply as a voice artist or musician for ÓOL, what we use it for, and how you can ask us to delete it.</p>
+
+    <div class="who">
+      <span>Who is responsible for your data</span>
+      <b>David Grimaldi</b>
+      <span>Av. Tulum 72, Tulum Centro, C.P. 77780, Tulum, Quintana Roo, Mexico</span>
+      <div class="mail"><span>ool.tulum@gmail.com</span><button class="copy" type="button" data-copy="ool.tulum@gmail.com">Copy email</button></div>
+    </div>
+
+    <section>
+      <h2>What data we collect</h2>
+      <ul>
+        <li>Full name or artist name, email, country, and city.</li>
+        <li>Your WhatsApp number, in the voice form only.</li>
+        <li>The languages you record in, or your instruments and musical genre.</li>
+        <li>Links to your social media, website, or tracks, and anything you tell us about your experience.</li>
+        <li>The audio files you upload: your audition or an excerpt of your music.</li>
+      </ul>
+      <p>We don't ask for sensitive personal data. If you are under 18, please don't send an application.</p>
+    </section>
+
+    <section>
+      <h2>What we use it for</h2>
+      <p>Only to listen to and evaluate your application, and to contact you about it by email or WhatsApp.</p>
+      <p>We don't use your voice or your music in the ÓOL app, or anywhere else, without a written agreement with you. We don't use your data for advertising.</p>
+    </section>
+
+    <section>
+      <h2>Who we share it with</h2>
+      <p>The forms run on Tally (Tally BV, Belgium), which stores the answers and files on our behalf. We use email and WhatsApp to be notified of each application and to write to you.</p>
+      <p>Only David Grimaldi listens to and reviews the applications. We don't share your data with anyone else: we don't sell it or pass it on.</p>
+    </section>
+
+    <section>
+      <h2>How long we keep it</h2>
+      <p>If your application doesn't move forward, we delete your data and files, including the copies in our email and on our devices, within six months of receiving it. If we end up working together, we keep them for as long as we do.</p>
+    </section>
+
+    <section>
+      <h2>Your rights</h2>
+      <p>At any time you can ask for access to your data, ask us to correct or delete it, or object to our using it (known in Mexico as ARCO rights). You can also withdraw your consent.</p>
+      <p>Write to <b>ool.tulum@gmail.com</b> from the email address you applied with, including your name and what you need. We reply within 20 business days and, where it applies, carry out your request within the following 15 business days.</p>
+    </section>
+
+    <section>
+      <h2>Cookies</h2>
+      <p>This page doesn't use cookies. When you fill in the form, Tally may use the cookies it needs to work.</p>
+    </section>
+
+    <section>
+      <h2>Changes to this notice</h2>
+      <p>If this notice changes, we'll publish the new version on this same page, with its date.</p>
+    </section>
+
+    <p class="date">Last updated: October 29, 2026.</p>
+    <p class="note">The Spanish version is the official one.</p>
+  </article>
+</div>
+
+<script>
+/* lingua: spagnolo di base; con #en nel link si apre in inglese */
+function setLang(l){
+  document.documentElement.lang = l;
+  document.querySelectorAll("[data-lang-block]").forEach(a => { a.hidden = a.dataset.langBlock !== l; });
+  document.querySelectorAll(".langs button").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === l));
+}
+document.querySelectorAll(".langs button").forEach(b => b.onclick = () => setLang(b.dataset.lang));
+setLang(location.hash === "#en" ? "en" : "es");
+/* copia l'indirizzo: se il browser non lo permette, lo seleziona */
+document.querySelectorAll(".copy").forEach(btn => btn.addEventListener("click", () => {
+  const label = btn.textContent;
+  const done = () => { btn.textContent = btn.closest("[lang]").lang === "en" ? "Copied" : "Copiado"; setTimeout(() => { btn.textContent = label; }, 1600); };
+  const select = () => { const r = document.createRange(); r.selectNodeContents(btn.previousElementSibling); const s = getSelection(); s.removeAllRanges(); s.addRange(r); };
+  try { navigator.clipboard.writeText(btn.dataset.copy).then(done, select); } catch (e) { select(); }
+}));
+</script>
