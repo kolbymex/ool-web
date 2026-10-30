@@ -83,6 +83,7 @@ h1 em{display:block;font-style:italic;color:var(--gold)}
 .panel .cta{margin-top:auto}
 .panel h2{font-size:clamp(34px,3.6vw,46px)}
 .panel p{color:var(--text);font-size:17px;max-width:28em}
+.panel .eyebrow{color:var(--gold);font-size:13px;letter-spacing:.12em;margin-bottom:-6px}
 .cta{margin-top:6px;display:inline-flex;align-items:center;gap:10px;font-family:var(--serif);font-size:18px;text-decoration:none;color:var(--cream);
   border:1px solid var(--line-2);background:rgba(232,178,77,.18);padding:12px 22px;border-radius:999px;transition:border-color .3s,background .3s}
 .cta:hover{border-color:var(--gold);background:rgba(232,178,77,.26)}
@@ -279,6 +280,7 @@ footer .pyramid{color:var(--gold)}
     <section class="panel" id="voci">
       <div class="art art-voz"><img src="assets/voz-casa.webp" alt="" width="1086" height="1448" loading="lazy"></div>
       <div class="tx">
+        <p class="eyebrow" data-i18n="vTag"></p>
         <h2 data-i18n="vT"></h2>
         <p data-i18n="vP"></p>
         <a class="cta" data-form="voice" target="_blank" rel="noopener"><span data-i18n="vCta"></span><span aria-hidden="true">→</span></a>
@@ -287,6 +289,7 @@ footer .pyramid{color:var(--gold)}
     <section class="panel" id="musica">
       <div class="art art-musica"><img src="assets/handpan-casa.webp" alt="" width="1254" height="1254" loading="lazy"></div>
       <div class="tx">
+        <p class="eyebrow" data-i18n="mTag"></p>
         <h2 data-i18n="mT"></h2>
         <p data-i18n="mP"></p>
         <a class="cta" data-form="music" target="_blank" rel="noopener"><span data-i18n="mCta"></span><span aria-hidden="true">→</span></a>
@@ -335,7 +338,7 @@ const T = {
     extra:"E ogni giorno, una frase che ispira e un diario per custodire le tue parole.",
     s3t:"Imparare di nuovo a respirare",s3:"Nella fretta di ogni giorno, molti di noi hanno dimenticato come si respira bene: il respiro si fa corto e veloce, senza che ce ne accorgiamo. ÓOL ti guida con respirazioni diverse per momenti diversi: per ritrovare la calma, per dormire, per concentrarti o per quando arriva l'ansia.",
     vT:"Voci",vP:"Una voce calma per guidare le meditazioni, in italiano, spagnolo o inglese. Per il provino basta una stanza silenziosa.",vCta:"Candidati come voce",
-    mT:"Musica",mP:"Brani lenti, strumentali o con voce leggera, per respirare, meditare o dormire. Ogni brano porta il tuo nome e i tuoi link.",mCta:"Proponi i tuoi brani",
+    mT:"Musica",vTag:"Meditazione guidata · narrazione",mTag:"Sound healing · ambient · musica lenta",mP:"Se la tua musica nasce per dare calma, qui può accompagnare altre persone a respirare, riposare e dormire. Cerchiamo brani lenti, strumentali o con voce leggera. Ogni brano porta il tuo nome e i tuoi link.",mCta:"Proponi i tuoi brani",
     g1:"La home",g1s:"Un tocco e inizi.",g2:"Respirare",g2s:"Una luce segue l'onda del tuo respiro.",g3:"A fine sessione",g3s:"Un animale e una frase da portare con te.",g4:"I sigilli",g4s:"Venti glifi di ispirazione maya che si sbloccano man mano che i respiri si sommano.",g5:"Il tuo cielo",g5s:"Una stella per ogni giorno di pratica.",
     whyLabel:"Perché partecipare",
     cLabel:"Unisciti a noi",cT:"La tua voce o la tua musica in ÓOL?",cP:"Compilare il modulo richiede pochi minuti. Ascoltiamo ogni proposta.",
@@ -351,7 +354,7 @@ alt:["Una donna, controluce al tramonto sul mare di Tulum, espira verso il cielo
     extra:"Y cada día, una frase que inspira y un diario para guardar tus propias palabras.",
     s3t:"Volver a aprender a respirar",s3:"Con la prisa de todos los días, muchos hemos olvidado cómo respirar bien: la respiración se vuelve corta y rápida sin que nos demos cuenta. ÓOL te guía con respiraciones distintas para distintos momentos: para recuperar la calma, para dormir, para concentrarte o para cuando llega la ansiedad.",
     vT:"Voces",vP:"Una voz tranquila para guiar las meditaciones, en italiano, español o inglés. Para la prueba basta un cuarto silencioso.",vCta:"Postúlate como voz",
-    mT:"Música",mP:"Temas lentos, instrumentales o con voz suave, para respirar, meditar o dormir. Cada tema lleva tu nombre y tus enlaces.",mCta:"Propón tus temas",
+    mT:"Música",vTag:"Meditación guiada · narración",mTag:"Sound healing · ambient · música lenta",mP:"Si tu música nace para dar calma, aquí puede acompañar a otras personas a respirar, descansar y dormir. Buscamos temas lentos, instrumentales o con voz suave. Cada tema lleva tu nombre y tus enlaces.",mCta:"Propón tus temas",
     g1:"Inicio",g1s:"Un toque y empiezas.",g2:"Respirar",g2s:"Una luz sigue la ola de tu respiración.",g3:"Al terminar",g3s:"Un animal y una frase para llevarte.",g4:"Los sellos",g4s:"Veinte glifos de inspiración maya que se desbloquean conforme sumas respiraciones.",g5:"Tu cielo",g5s:"Una estrella por cada día de práctica.",
     whyLabel:"Por qué participar",
     cLabel:"Súmate",cT:"¿Tu voz o tu música en ÓOL?",cP:"Llenar el formulario toma unos minutos. Escuchamos cada propuesta.",
@@ -367,7 +370,7 @@ alt:["Una mujer, a contraluz al atardecer sobre el mar de Tulum, exhala hacia el
     extra:"And every day, an inspiring line and a journal for your own words.",
     s3t:"Learning to breathe again",s3:"In the rush of everyday life, many of us have forgotten how to breathe well: our breathing turns fast and shallow without our noticing. ÓOL guides you through different ways of breathing for different moments: to find calm again, to sleep, to focus, or for when anxiety rises.",
     vT:"Voices",vP:"A calm voice to guide the meditations, in Italian, Spanish, or English. For the audition, a quiet room is enough.",vCta:"Apply as a voice",
-    mT:"Music",mP:"Slow music, instrumental or with a soft voice, for breathing, meditating, or sleeping. Every track carries your name and your links.",mCta:"Submit your music",
+    mT:"Music",vTag:"Guided meditation · narration",mTag:"Sound healing · ambient · slow music",mP:"If your music is made to bring calm, here it can keep others company as they breathe, rest, and fall asleep. We're looking for slow tracks, instrumental or with a soft voice. Every track carries your name and your links.",mCta:"Submit your music",
     g1:"Home",g1s:"One tap and you begin.",g2:"Breathing",g2s:"A light follows the wave of your breath.",g3:"After a session",g3s:"An animal and a line to take with you.",g4:"The seals",g4s:"Twenty Maya-inspired glyphs that unlock as your breaths add up.",g5:"Your sky",g5s:"One star for every day of practice.",
     whyLabel:"Why take part",
     cLabel:"Join us",cT:"Your voice or your music in ÓOL?",cP:"The form takes a few minutes. We listen to every submission.",
