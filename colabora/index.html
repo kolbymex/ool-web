@@ -87,6 +87,19 @@ h1 em{display:block;font-style:italic;color:var(--gold)}
 .cta:hover{border-color:var(--gold);background:rgba(232,178,77,.26)}
 .cta[aria-disabled="true"]{opacity:.6;pointer-events:none}
 
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+/* in alto, due tasti che portano giù a Voces e a Música; in fondo, una chiusura con i due pulsanti dei moduli */
+.jump{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:6px}
+.jump a{font:500 15px/1 var(--sans);color:var(--cream);text-decoration:none;border:1px solid rgba(232,178,77,.45);border-radius:999px;padding:12px 18px;transition:border-color .3s}
+.jump a:hover{border-color:var(--gold)}
+.jump a [aria-hidden]{color:var(--gold);margin-left:6px}
+.close{margin-top:88px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px}
+.close h2{font-size:clamp(32px,4vw,46px)}
+.close p:not(.eyebrow){color:var(--muted);font-size:18px;max-width:30em;margin:0}
+.close .btns{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:12px}
+.close .cta{margin:0}
+
 /* dentro ÓOL: tre colonne di solo testo */
 .inside{margin-top:88px}
 .inside h2{font-size:clamp(32px,4vw,46px);margin-top:12px}
@@ -201,6 +214,7 @@ footer .pyramid{color:var(--gold)}
     <p class="eyebrow" data-i18n="eyebrow"></p>
     <h1 data-i18n-html="h1"></h1>
     <p class="lede" data-i18n="lede"></p>
+    <nav class="jump"><a href="#voci"><span data-i18n="vT"></span><span aria-hidden="true">↓</span></a><a href="#musica"><span data-i18n="mT"></span><span aria-hidden="true">↓</span></a></nav>
   </header>
 
   <div class="band-wrap">
@@ -291,6 +305,16 @@ footer .pyramid{color:var(--gold)}
     <div class="why-art"><img src="assets/respira.webp" alt="" width="1330" height="1182" loading="lazy"></div>
   </section>
 
+  <section class="close">
+    <p class="eyebrow" data-i18n="cLabel"></p>
+    <h2 data-i18n="cT"></h2>
+    <p data-i18n="cP"></p>
+    <div class="btns">
+      <a class="cta" data-form="voice" target="_blank" rel="noopener"><span data-i18n="vCta"></span><span aria-hidden="true">→</span></a>
+      <a class="cta" data-form="music" target="_blank" rel="noopener"><span data-i18n="mCta"></span><span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+
   <footer>
     <svg class="pyramid" width="30" height="30" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 20h18 M4.6 20l1.5-4.2h11.8l1.5 4.2 M6.8 15.8l1.3-3.6h7.8l1.3 3.6 M8.8 12.2l1.1-3.1h4.2l1.1 3.1 M10.4 9.1V6.6h3.2v2.5 M12 20v-7.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
     <span>Design in Tulum, México</span>
@@ -313,6 +337,7 @@ const T = {
     mT:"Musica",mP:"Brani lenti, strumentali o con voce leggera, per respirare, meditare o dormire. Ogni brano porta il tuo nome e i tuoi link.",mCta:"Proponi i tuoi brani",
     g1:"La home",g1s:"Un tocco e inizi.",g2:"Respirare",g2s:"Una luce segue l'onda del tuo respiro.",g3:"A fine sessione",g3s:"Un animale e una frase da portare con te.",g4:"I sigilli",g4s:"Venti glifi di ispirazione maya che si sbloccano man mano che i respiri si sommano.",g5:"Il tuo cielo",g5s:"Una stella per ogni giorno di pratica.",
     whyLabel:"Perché partecipare",
+    cLabel:"Unisciti a noi",cT:"La tua voce o la tua musica in ÓOL?",cP:"Compilare il modulo richiede pochi minuti. Ascoltiamo ogni proposta.",
     w1t:"In tutto il mondo",w1:"Il tuo nome dentro ÓOL, che arriverà sull'App Store in oltre 170 paesi. Si scaricherà gratis.",
     w2t:"Far conoscere Tulum",w2:"Un progetto di qui, che porta lontano la voce di questa terra.",
     w3t:"Qualcosa che aiuta",w3:"Un modo semplice di ritrovare la calma e il sonno, per chi ne ha bisogno.",
@@ -328,6 +353,7 @@ alt:["Una donna, controluce al tramonto sul mare di Tulum, espira verso il cielo
     mT:"Música",mP:"Temas lentos, instrumentales o con voz suave, para respirar, meditar o dormir. Cada tema lleva tu nombre y tus enlaces.",mCta:"Propón tus temas",
     g1:"Inicio",g1s:"Un toque y empiezas.",g2:"Respirar",g2s:"Una luz sigue la ola de tu respiración.",g3:"Al terminar",g3s:"Un animal y una frase para llevarte.",g4:"Los sellos",g4s:"Veinte glifos de inspiración maya que se desbloquean conforme sumas respiraciones.",g5:"Tu cielo",g5s:"Una estrella por cada día de práctica.",
     whyLabel:"Por qué participar",
+    cLabel:"Súmate",cT:"¿Tu voz o tu música en ÓOL?",cP:"Llenar el formulario toma unos minutos. Escuchamos cada propuesta.",
     w1t:"En todo el mundo",w1:"Tu nombre en ÓOL, que llegará al App Store en más de 170 países. Se podrá descargar gratis.",
     w2t:"Dar a conocer Tulum",w2:"Un proyecto de aquí, que lleva lejos la voz de esta tierra.",
     w3t:"Algo que ayuda",w3:"Una forma sencilla de recuperar la calma y el sueño, para quien lo necesite.",
@@ -343,6 +369,7 @@ alt:["Una mujer, a contraluz al atardecer sobre el mar de Tulum, exhala hacia el
     mT:"Music",mP:"Slow music, instrumental or with a soft voice, for breathing, meditating, or sleeping. Every track carries your name and your links.",mCta:"Submit your music",
     g1:"Home",g1s:"One tap and you begin.",g2:"Breathing",g2s:"A light follows the wave of your breath.",g3:"After a session",g3s:"An animal and a line to take with you.",g4:"The seals",g4s:"Twenty Maya-inspired glyphs that unlock as your breaths add up.",g5:"Your sky",g5s:"One star for every day of practice.",
     whyLabel:"Why take part",
+    cLabel:"Join us",cT:"Your voice or your music in ÓOL?",cP:"The form takes a few minutes. We listen to every submission.",
     w1t:"Around the world",w1:"Your name in ÓOL, coming to the App Store in more than 170 countries. Free to download.",
     w2t:"Sharing Tulum",w2:"A project from here, carrying the voice of this land far and wide.",
     w3t:"Something that helps",w3:"A simple way back to calm and to sleep, for anyone who needs it.",
