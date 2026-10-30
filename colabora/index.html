@@ -330,8 +330,10 @@ footer .pyramid{color:var(--gold)}
 </div>
 
 <script>
-/* Link ai moduli di candidatura su Tally (Voces / Voices e Música / Music). Un link vuoto spegne il suo pulsante. */
-const FORMS = { voice: "https://tally.so/r/e5549o", music: "https://tally.so/r/4aa5Er" };
+/* Link ai moduli di candidatura: Voces su Zite (si registra la voce dal modulo), Música su Tally. Un link vuoto spegne il suo pulsante.
+   Il modulo Voces si apre nella lingua della pagina (?lang=en / ?lang=it; senza, in spagnolo). */
+const FORMS = { voice: "https://wn5necedxf.zite.so", music: "https://tally.so/r/4aa5Er" };
+const FORM_LANG = { voice: true };
 
 const T = {
   it:{eyebrow:"Cerchiamo voci e musica",h1:"Ogni respiro ha un suono. <em>Può essere il tuo.</em>",
@@ -397,7 +399,7 @@ function render(){
   document.querySelectorAll(".langs button").forEach(b=>b.setAttribute("aria-pressed", b.dataset.lang===lang));
   document.querySelectorAll("[data-form]").forEach(a=>{
     const u = FORMS[a.dataset.form];
-    if(u){ a.href = u; a.removeAttribute("aria-disabled"); a.removeAttribute("tabindex"); }
+    if(u){ a.href = FORM_LANG[a.dataset.form] && lang !== "es" ? u + "?lang=" + lang : u; a.removeAttribute("aria-disabled"); a.removeAttribute("tabindex"); }
     else { a.removeAttribute("href"); a.setAttribute("aria-disabled","true"); a.setAttribute("tabindex","-1"); }
   });
 }
