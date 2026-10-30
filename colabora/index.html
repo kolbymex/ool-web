@@ -287,7 +287,7 @@ footer .pyramid{color:var(--gold)}
         <p class="eyebrow" data-i18n="vTag"></p>
         <h2 data-i18n="vT"></h2>
         <p data-i18n="vP"></p>
-        <a class="cta" data-form="voice" target="_blank" rel="noopener"><span data-i18n="vCta"></span><span aria-hidden="true">→</span></a>
+        <a class="cta" data-form="voice"><span data-i18n="vCta"></span><span aria-hidden="true">→</span></a>
       </div>
     </section>
     <section class="panel" id="musica">
@@ -296,7 +296,7 @@ footer .pyramid{color:var(--gold)}
         <p class="eyebrow" data-i18n="mTag"></p>
         <h2 data-i18n="mT"></h2>
         <p data-i18n="mP"></p>
-        <a class="cta" data-form="music" target="_blank" rel="noopener"><span data-i18n="mCta"></span><span aria-hidden="true">→</span></a>
+        <a class="cta" data-form="music"><span data-i18n="mCta"></span><span aria-hidden="true">→</span></a>
       </div>
     </section>
   </main>
@@ -318,8 +318,8 @@ footer .pyramid{color:var(--gold)}
     <h2 data-i18n="cT"></h2>
     <p data-i18n="cP"></p>
     <div class="btns">
-      <a class="cta" data-form="voice" target="_blank" rel="noopener"><span data-i18n="vCta"></span><span aria-hidden="true">→</span></a>
-      <a class="cta" data-form="music" target="_blank" rel="noopener"><span data-i18n="mCta"></span><span aria-hidden="true">→</span></a>
+      <a class="cta" data-form="voice"><span data-i18n="vCta"></span><span aria-hidden="true">→</span></a>
+      <a class="cta" data-form="music"><span data-i18n="mCta"></span><span aria-hidden="true">→</span></a>
     </div>
   </section>
 
@@ -386,8 +386,9 @@ alt:["Una mujer, a contraluz al atardecer sobre el mar de Tulum, exhala hacia el
 alt:["A woman, backlit at sunset over the sea in Tulum, breathes out toward the sky","A woman with headphones speaking into a microphone","Hands playing a handpan in warm light"]}
 };
 
-/* la pagina si apre sempre in spagnolo: cerchiamo soprattutto collaboratori che parlano spagnolo */
-let lang = "es";
+/* la pagina si apre in spagnolo: cerchiamo soprattutto collaboratori che parlano spagnolo.
+   ?lang=en / ?lang=it (per esempio tornando da un modulo) la apre in quella lingua */
+let lang = ({ en: "en", it: "it" })[new URLSearchParams(location.search).get("lang")] || "es";
 
 function render(){
   const t = T[lang];
@@ -399,7 +400,9 @@ function render(){
   document.querySelectorAll(".langs button").forEach(b=>b.setAttribute("aria-pressed", b.dataset.lang===lang));
   document.querySelectorAll("[data-form]").forEach(a=>{
     const u = FORMS[a.dataset.form];
-    if(u){ a.href = FORM_LANG[a.dataset.form] && lang !== "es" ? u + "?lang=" + lang : u; a.removeAttribute("aria-disabled"); a.removeAttribute("tabindex"); }
+    if(u){ a.href = FORM_LANG[a.dataset.form] && lang !== "es" ? u + "?lang=" + lang : u; a.removeAttribute("aria-disabled"); a.removeAttribute("tabindex");
+      /* sul sito il modulo si apre nella stessa scheda, così "indietro" riporta qui; dentro una cornice (la copia su claude.ai) in una scheda nuova */
+      if (window.top !== window.self) { a.target = "_blank"; a.rel = "noopener"; } }
     else { a.removeAttribute("href"); a.setAttribute("aria-disabled","true"); a.setAttribute("tabindex","-1"); }
   });
 }
