@@ -142,7 +142,8 @@ html{scroll-behavior:smooth}
 .cap-list li.on b{color:var(--cream)}
 .cap-list li.on span{color:var(--text);opacity:1}
 .nav{display:none;align-items:center;justify-content:center;gap:18px;margin-top:14px}
-.arrow{border:1px solid var(--line-2);background:none;color:var(--cream);width:40px;height:40px;border-radius:50%;font:300 22px/1 var(--serif);cursor:pointer}
+.arrow{border:1px solid var(--line-2);background:none;color:var(--cream);width:44px;height:44px;padding:0;border-radius:50%;display:grid;place-items:center;cursor:pointer}
+.arrow svg{width:24px;height:24px}
 .dots{display:flex;gap:8px}
 .dots i{width:8px;height:8px;border-radius:50%;background:var(--line-2);cursor:pointer}
 .dots i.on{background:var(--gold)}
@@ -268,9 +269,9 @@ footer .pyramid{color:var(--gold)}
         <li><button type="button" data-go="4"><b data-i18n="g5"></b><span data-i18n="g5s"></span></button></li>
         </ol>
         <div class="nav">
-          <button type="button" class="arrow" id="prev" aria-label="‹">‹</button>
+          <button type="button" class="arrow" id="prev" data-i18n-label="prev"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 4.5 7.5 12l7.5 7.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           <span class="dots" id="dots"><i data-go="0"></i><i data-go="1"></i><i data-go="2"></i><i data-go="3"></i><i data-go="4"></i></span>
-          <button type="button" class="arrow" id="next" aria-label="›">›</button>
+          <button type="button" class="arrow" id="next" data-i18n-label="next"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 4.5 16.5 12 9 19.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
         </div>
       </div>
     </div>
@@ -340,7 +341,7 @@ const T = {
     vT:"Voci",vP:"Una voce calma per guidare le meditazioni, in italiano, spagnolo o inglese. Per il provino basta una stanza silenziosa.",vCta:"Candidati come voce",
     mT:"Musica",vTag:"Meditazione guidata · narrazione",mTag:"Sound healing · ambient · musica lenta",mP:"Se la tua musica nasce per dare calma, qui può accompagnare altre persone a respirare, riposare e dormire. Cerchiamo brani lenti, strumentali o con voce leggera. Ogni brano porta il tuo nome e i tuoi link.",mCta:"Proponi i tuoi brani",
     g1:"La home",g1s:"Un tocco e inizi.",g2:"Respirare",g2s:"Una luce segue l'onda del tuo respiro.",g3:"A fine sessione",g3s:"Un animale e una frase da portare con te.",g4:"I sigilli",g4s:"Venti glifi di ispirazione maya che si sbloccano man mano che i respiri si sommano.",g5:"Il tuo cielo",g5s:"Una stella per ogni giorno di pratica.",
-    whyLabel:"Perché partecipare",
+    whyLabel:"Perché partecipare",prev:"Schermata precedente",next:"Schermata successiva",
     cLabel:"Unisciti a noi",cT:"La tua voce o la tua musica in ÓOL?",cP:"Compilare il modulo richiede pochi minuti. Ascoltiamo ogni proposta.",
     w1t:"In tutto il mondo",w1:"Il tuo nome dentro ÓOL, che arriverà sull'App Store in oltre 170 paesi. Si scaricherà gratis.",
     w2t:"Far conoscere Tulum",w2:"Un progetto di qui, che porta lontano la voce di questa terra.",
@@ -356,7 +357,7 @@ alt:["Una donna, controluce al tramonto sul mare di Tulum, espira verso il cielo
     vT:"Voces",vP:"Una voz tranquila para guiar las meditaciones, en italiano, español o inglés. Para la prueba basta un cuarto silencioso.",vCta:"Postúlate como voz",
     mT:"Música",vTag:"Meditación guiada · narración",mTag:"Sound healing · ambient · música lenta",mP:"Si tu música nace para dar calma, aquí puede acompañar a otras personas a respirar, descansar y dormir. Buscamos temas lentos, instrumentales o con voz suave. Cada tema lleva tu nombre y tus enlaces.",mCta:"Propón tus temas",
     g1:"Inicio",g1s:"Un toque y empiezas.",g2:"Respirar",g2s:"Una luz sigue la ola de tu respiración.",g3:"Al terminar",g3s:"Un animal y una frase para llevarte.",g4:"Los sellos",g4s:"Veinte glifos de inspiración maya que se desbloquean conforme sumas respiraciones.",g5:"Tu cielo",g5s:"Una estrella por cada día de práctica.",
-    whyLabel:"Por qué participar",
+    whyLabel:"Por qué participar",prev:"Pantalla anterior",next:"Pantalla siguiente",
     cLabel:"Súmate",cT:"¿Tu voz o tu música en ÓOL?",cP:"Llenar el formulario toma unos minutos. Escuchamos cada propuesta.",
     w1t:"En todo el mundo",w1:"Tu nombre en ÓOL, que llegará al App Store en más de 170 países. Se podrá descargar gratis.",
     w2t:"Dar a conocer Tulum",w2:"Un proyecto de aquí, que lleva lejos la voz de esta tierra.",
@@ -372,7 +373,7 @@ alt:["Una mujer, a contraluz al atardecer sobre el mar de Tulum, exhala hacia el
     vT:"Voices",vP:"A calm voice to guide the meditations, in Italian, Spanish, or English. For the audition, a quiet room is enough.",vCta:"Apply as a voice",
     mT:"Music",vTag:"Guided meditation · narration",mTag:"Sound healing · ambient · slow music",mP:"If your music is made to bring calm, here it can keep others company as they breathe, rest, and fall asleep. We're looking for slow tracks, instrumental or with a soft voice. Every track carries your name and your links.",mCta:"Submit your music",
     g1:"Home",g1s:"One tap and you begin.",g2:"Breathing",g2s:"A light follows the wave of your breath.",g3:"After a session",g3s:"An animal and a line to take with you.",g4:"The seals",g4s:"Twenty Maya-inspired glyphs that unlock as your breaths add up.",g5:"Your sky",g5s:"One star for every day of practice.",
-    whyLabel:"Why take part",
+    whyLabel:"Why take part",prev:"Previous screen",next:"Next screen",
     cLabel:"Join us",cT:"Your voice or your music in ÓOL?",cP:"The form takes a few minutes. We listen to every submission.",
     w1t:"Around the world",w1:"Your name in ÓOL, coming to the App Store in more than 170 countries. Free to download.",
     w2t:"Sharing Tulum",w2:"A project from here, carrying the voice of this land far and wide.",
@@ -388,6 +389,7 @@ function render(){
   document.documentElement.lang = lang;
   document.querySelectorAll("[data-i18n]").forEach(el=>{ el.textContent = t[el.dataset.i18n]; });
   document.querySelectorAll("[data-i18n-html]").forEach(el=>{ el.innerHTML = t[el.dataset.i18nHtml]; });
+  document.querySelectorAll("[data-i18n-label]").forEach(el=>{ el.setAttribute("aria-label", t[el.dataset.i18nLabel]); });
   [document.querySelector(".band"), ...document.querySelectorAll(".panel img")].forEach((img,i)=>{ img.alt = t.alt[i]; });
   document.querySelectorAll(".langs button").forEach(b=>b.setAttribute("aria-pressed", b.dataset.lang===lang));
   document.querySelectorAll("[data-form]").forEach(a=>{
