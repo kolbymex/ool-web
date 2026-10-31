@@ -63,7 +63,8 @@ header{display:flex;flex-direction:column;align-items:center;text-align:center;g
 .eyebrow{font-size:13px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
 h1{font-size:clamp(40px,6vw,72px);letter-spacing:-.01em;max-width:13ch}
 h1 em{display:block;font-style:italic;color:var(--gold)}
-.lede{font-size:18px;color:var(--muted);max-width:32em}
+.poem{font-family:var(--serif);font-style:italic;font-size:26px;line-height:1.4;color:var(--cream);max-width:22em;margin:4px 0 6px;text-wrap:balance}
+.lede{font-size:18px;color:var(--muted);max-width:32em;text-wrap:pretty}
 
 .band{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;object-position:50% 85%;border-radius:22px}
 
@@ -204,6 +205,7 @@ footer .pyramid{color:var(--gold)}
   .inside .breathe{font-size:18px}
   .meaning{margin-top:34px}
   .meaning .def{font-size:22px}
+  .poem{font-size:22px}
   .cenote{margin-top:40px}
   .cenote::after{display:none}
   .cenote figcaption{position:static;margin-top:16px;padding:0 4px}
@@ -248,6 +250,7 @@ footer .pyramid{color:var(--gold)}
     </div>
     <p class="eyebrow" data-i18n="eyebrow"></p>
     <h1 data-i18n-html="h1"></h1>
+    <p class="poem" data-i18n="poem"></p>
     <p class="lede" data-i18n="lede"></p>
     <nav class="jump"><a href="#voci"><span data-i18n="vT"></span><span aria-hidden="true">↓</span></a><a href="#musica"><span data-i18n="mT"></span><span aria-hidden="true">↓</span></a></nav>
   </header>
@@ -371,7 +374,7 @@ const FORM_LANG = { voice: true, music: true, beta: true };
 
 const T = {
   it:{eyebrow:"Cerchiamo voci e musica",h1:"Ogni respiro ha un suono. <em>Può essere il tuo.</em>",
-    lede:"ÓOL è un rifugio in tasca, nato a Tulum: la selva, il mare, le storie del mondo maya e il respiro al centro.",
+    poem:"Un po' di selva, di cenote e di silenzio, da portare in tasca.",lede:"ÓOL è un'app, ma soprattutto uno strumento per tornare al tuo respiro. Nasce a Tulum, tra il mare e le storie del mondo maya.",
     
     s1t:"Suoni veri",s1:"Registriamo dal vivo i suoni di Tulum: la pioggia, le onde, la selva.",
     extra:"E ogni giorno, una frase che ispira e un diario per custodire le tue parole.",
@@ -388,7 +391,7 @@ const T = {
     w3t:"Qualcosa che aiuta",w3:"Un modo semplice di ritrovare la calma e il sonno, per chi ne ha bisogno.",
 alt:["Una donna, controluce al tramonto sul mare di Tulum, espira verso il cielo","Una donna con le cuffie parla al microfono","Mani che suonano un handpan nella luce calda"]},
   es:{eyebrow:"Buscamos voces y música",h1:"Cada respiración tiene un sonido. <em>Puede ser el tuyo.</em>",
-    lede:"ÓOL es un refugio de bolsillo, nacido en Tulum: la selva, el mar, las historias del mundo maya y la respiración en el centro.",
+    poem:"Un poco de selva, de cenote y de silencio, para llevar en el bolsillo.",lede:"ÓOL es una app, pero sobre todo una herramienta para volver a tu respiración. Nace en Tulum, entre el mar y las historias del mundo maya.",
     
     s1t:"Sonidos reales",s1:"Grabamos en vivo los sonidos de Tulum: la lluvia, las olas, la selva.",
     extra:"Y cada día, una frase que inspira y un diario para guardar tus propias palabras.",
@@ -405,7 +408,7 @@ alt:["Una donna, controluce al tramonto sul mare di Tulum, espira verso il cielo
     w3t:"Algo que ayuda",w3:"Una forma sencilla de recuperar la calma y el sueño, para quien lo necesite.",
 alt:["Una mujer, a contraluz al atardecer sobre el mar de Tulum, exhala hacia el cielo","Una mujer con audífonos habla frente al micrófono","Manos que tocan un handpan bajo una luz cálida"]},
   en:{eyebrow:"Looking for voices and music",h1:"Every breath has a sound. <em>It could be yours.</em>",
-    lede:"ÓOL is a refuge in your pocket, born in Tulum: the jungle, the sea, stories from the Maya world, and breath at the center.",
+    poem:"A little jungle, a little cenote and a little silence, to carry in your pocket.",lede:"ÓOL is an app, but above all a tool for coming back to your breath. It was born in Tulum, between the sea and the stories of the Maya world.",
     
     s1t:"Real sounds",s1:"We record the sounds of Tulum on location: the rain, the waves, the jungle.",
     extra:"And every day, an inspiring line and a journal for your own words.",
