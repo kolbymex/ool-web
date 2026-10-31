@@ -108,6 +108,12 @@ html{scroll-behavior:smooth}
 .tester a{font-family:var(--serif);font-size:17px;color:var(--gold);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px;padding:8px 4px}
 .tester a:hover{text-decoration-thickness:2px}
 
+/* sotto la prima foto: cosa vuol dire ÓOL, come una voce di dizionario */
+.meaning{margin:44px auto 0;max-width:760px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px}
+.meaning .word{margin:0;font-family:var(--serif);font-size:40px;color:var(--gold);letter-spacing:.02em}
+.meaning .word span{font-family:var(--sans);font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);vertical-align:middle;margin-left:6px}
+.meaning .def{margin:0;font-family:var(--serif);font-style:italic;font-size:26px;line-height:1.45;color:var(--cream);text-wrap:balance}
+
 /* dentro ÓOL: resta solo "Imparare di nuovo a respirare"; "Suoni veri" sta sopra la foto del cenote, le meditazioni nel carosello */
 .inside .breathe{margin-top:18px;max-width:38em;font-size:23px;line-height:1.6;color:var(--text)}
 .cenote{position:relative;margin:56px 0 0}
@@ -197,6 +203,9 @@ footer .pyramid{color:var(--gold)}
   .band-cenote{margin-top:40px;object-position:22% 50%}
   /* sul telefono la foto è più bassa: la scritta va sotto, non sopra il tamburo */
   .inside .breathe{font-size:18px}
+  .meaning{margin-top:34px}
+  .meaning .word{font-size:34px}
+  .meaning .def{font-size:22px}
   .cenote{margin-top:40px}
   .cenote::after{display:none}
   .cenote figcaption{position:static;margin-top:16px;padding:0 4px}
@@ -248,6 +257,11 @@ footer .pyramid{color:var(--gold)}
   <div class="band-wrap">
     <img class="band" src="assets/foto-respiro.webp" alt="" width="1536" height="1024">
   </div>
+
+  <section class="meaning">
+    <p class="word">ÓOL <span data-i18n="nLang"></span></p>
+    <p class="def" data-i18n="nDef"></p>
+  </section>
 
   <section class="inside">
     <h2 data-i18n="s3t"></h2>
@@ -370,6 +384,7 @@ const T = {
     mT:"Musica",vTag:"Meditazione guidata · narrazione",mTag:"Sound healing · ambient · musica lenta",mP:"Se la tua musica nasce per dare calma, qui può accompagnare altre persone a respirare, riposare e dormire. Cerchiamo brani lenti, strumentali o con voce leggera. Ogni brano porta il tuo nome e i tuoi link.",mCta:"Proponi i tuoi brani",
     g1:"La home",g1s:"Un tocco e inizi.",g2:"Respirare",g2s:"Una luce segue l'onda del tuo respiro.",gM:"Meditare",gMs:"Diciassette meditazioni fra luoghi veri e miti maya. Si aprono una alla volta, con la pratica.",g3:"A fine sessione",g3s:"Un animale e una frase da portare con te.",g4:"I sigilli",g4s:"Venti glifi di ispirazione maya che si sbloccano man mano che i respiri si sommano.",g5:"Il tuo cielo",g5s:"Una stella per ogni giorno di pratica.",
     whyLabel:"Perché partecipare",
+    nLang:"· maya yucateco",nDef:"ÓOL è ciò che resta quando il respiro torna al centro: l'animo, il cuore, l'energia.",
     tP:"Né voce né musica? Stiamo preparando la versione di prova: prova ÓOL prima che esca.",tCta:"Voglio provarla",prev:"Schermata precedente",next:"Schermata successiva",
     cLabel:"Unisciti a noi",cT:"La tua voce o la tua musica in ÓOL?",cP:"Compilare il modulo richiede pochi minuti. Ascoltiamo ogni proposta.",
     w1t:"In tutto il mondo",w1:"Il tuo nome dentro ÓOL, che arriverà sull'App Store in oltre 170 paesi. Si scaricherà gratis.",
@@ -387,6 +402,7 @@ alt:["Una donna, controluce al tramonto sul mare di Tulum, espira verso il cielo
     mT:"Música",vTag:"Meditación guiada · narración",mTag:"Sound healing · ambient · música lenta",mP:"Si tu música nace para dar calma, aquí puede acompañar a otras personas a respirar, descansar y dormir. Buscamos piezas lentas, instrumentales o con voz suave. Cada pieza lleva tu nombre y tus enlaces.",mCta:"Propón tu música",
     g1:"Inicio",g1s:"Un toque y empiezas.",g2:"Respirar",g2s:"Una luz sigue la ola de tu respiración.",gM:"Meditar",gMs:"Diecisiete meditaciones entre lugares reales y mitos mayas. Se abren una por una, con la práctica.",g3:"Al terminar",g3s:"Un animal y una frase para llevarte.",g4:"Los sellos",g4s:"Veinte glifos de inspiración maya que se desbloquean conforme sumas respiraciones.",g5:"Tu cielo",g5s:"Una estrella por cada día de práctica.",
     whyLabel:"Por qué participar",
+    nLang:"· maya yucateco",nDef:"ÓOL es lo que queda cuando la respiración vuelve al centro: el ánimo, el corazón, la energía.",
     tP:"¿Ni voz ni música? Estamos preparando la versión de prueba: prueba ÓOL antes de que salga.",tCta:"Quiero probarla",prev:"Pantalla anterior",next:"Pantalla siguiente",
     cLabel:"Súmate",cT:"¿Tu voz o tu música en ÓOL?",cP:"Llenar el formulario toma unos minutos. Escuchamos cada propuesta.",
     w1t:"En todo el mundo",w1:"Tu nombre en ÓOL, que llegará al App Store en más de 170 países. Se podrá descargar gratis.",
@@ -404,6 +420,7 @@ alt:["Una mujer, a contraluz al atardecer sobre el mar de Tulum, exhala hacia el
     mT:"Music",vTag:"Guided meditation · narration",mTag:"Sound healing · ambient · slow music",mP:"If your music is made to bring calm, here it can keep others company as they breathe, rest, and fall asleep. We're looking for slow tracks, instrumental or with a soft voice. Every track carries your name and your links.",mCta:"Submit your music",
     g1:"Home",g1s:"One tap and you begin.",g2:"Breathing",g2s:"A light follows the wave of your breath.",gM:"Meditating",gMs:"Seventeen meditations set in real places and Maya myths. They open up one by one as you practice.",g3:"After a session",g3s:"An animal and a line to take with you.",g4:"The seals",g4s:"Twenty Maya-inspired glyphs that unlock as your breaths add up.",g5:"Your sky",g5s:"One star for every day of practice.",
     whyLabel:"Why take part",
+    nLang:"· Yucatec Maya",nDef:"ÓOL is what remains when the breath returns to center: the spirit, the heart, the energy.",
     tP:"Not a voice or a musician? We're preparing the test version: try ÓOL before it's out.",tCta:"I want to try it",prev:"Previous screen",next:"Next screen",
     cLabel:"Join us",cT:"Your voice or your music in ÓOL?",cP:"The form takes a few minutes. We listen to every submission.",
     w1t:"Around the world",w1:"Your name in ÓOL, coming to the App Store in more than 170 countries. Free to download.",
