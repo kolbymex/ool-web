@@ -108,6 +108,15 @@ html{scroll-behavior:smooth}
 .tester a{font-family:var(--serif);font-size:17px;color:var(--gold);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px;padding:8px 4px}
 .tester a:hover{text-decoration-thickness:2px}
 
+/* dentro ÓOL: resta solo "Imparare di nuovo a respirare"; "Suoni veri" sta sopra la foto del cenote, le meditazioni nel carosello */
+.inside .breathe{margin-top:18px;max-width:38em;font-size:23px;line-height:1.6;color:var(--text)}
+.cenote{position:relative;margin:56px 0 0}
+.cenote .band-cenote{margin-top:0}
+.cenote::after{content:"";position:absolute;inset:0;border-radius:22px;background:linear-gradient(180deg,rgba(8,24,30,0) 45%,rgba(8,24,30,.82) 100%);pointer-events:none}
+.cenote figcaption{position:absolute;left:36px;right:36px;bottom:30px;z-index:1;display:flex;flex-direction:column;gap:4px;max-width:30em}
+.cenote figcaption b{font-family:var(--serif);font-weight:400;font-size:32px;color:var(--cream)}
+.cenote figcaption span{font-size:20px;color:var(--text)}
+
 /* dentro ÓOL: tre colonne di solo testo */
 .inside{margin-top:88px}
 .inside h2{font-size:clamp(32px,4vw,46px);margin-top:12px}
@@ -116,7 +125,7 @@ html{scroll-behavior:smooth}
 .cols p{margin-top:8px;color:var(--muted);font-size:17px}
 /* la foto del cenote chiude "Dentro de ÓOL": larga, con il tamburo e il flauto a sinistra */
 .band-cenote{margin-top:56px;aspect-ratio:21/9;object-position:50% 80%}
-.extra{margin-top:36px;padding-top:22px;border-top:1px solid var(--line);font-family:var(--serif);font-size:21px;line-height:1.45;color:var(--cream)}
+.extra{margin-top:36px;padding-top:22px;border-top:1px solid var(--line);font-family:var(--serif);font-size:24px;line-height:1.45;color:var(--cream)}
 /* perché partecipare: un pannello come Voces e Música, i tre motivi a sinistra e la donna che respira a destra, appoggiata al bordo in basso dove è tagliata */
 .why{margin-top:96px}
 .why ul{list-style:none;margin:22px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px}
@@ -186,6 +195,13 @@ footer .pyramid{color:var(--gold)}
   .logo img{height:40px}
   .band{aspect-ratio:4/3;object-position:30% 50%}
   .band-cenote{margin-top:40px;object-position:22% 50%}
+  /* sul telefono la foto è più bassa: la scritta va sotto, non sopra il tamburo */
+  .inside .breathe{font-size:18px}
+  .cenote{margin-top:40px}
+  .cenote::after{display:none}
+  .cenote figcaption{position:static;margin-top:16px;padding:0 4px}
+  .cenote figcaption span{font-size:17px}
+  .cenote figcaption b{font-size:24px}
   /* su telefono la donna va sopra il testo, come le figure di Voces e Música, e il bagliore sale dietro di lei */
   .why-card{grid-template-columns:1fr;background:radial-gradient(80% 34% at 55% 20%,rgba(232,178,77,.22),transparent 70%),linear-gradient(180deg,#0F2D36 0%,#0B2229 100%)}
   .why-card .why-art{order:-1;padding:18px 10px 0}
@@ -234,18 +250,13 @@ footer .pyramid{color:var(--gold)}
   </div>
 
   <section class="inside">
-    <p class="eyebrow" data-i18n="inLabel"></p>
-    <h2 data-i18n="inTitle"></h2>
-    <div class="cols">
-      <div><h3 data-i18n="s1t"></h3><p data-i18n="s1"></p></div>
-      <div><h3 data-i18n="s2t"></h3><p data-i18n="s2"></p></div>
-      <div>
-        <h3 data-i18n="s3t"></h3>
-        <p data-i18n="s3"></p>
-      </div>
-    </div>
+    <h2 data-i18n="s3t"></h2>
+    <p class="breathe" data-i18n="s3"></p>
     <p class="extra" data-i18n="extra"></p>
-    <img class="band band-cenote" src="assets/cenote.webp" alt="" width="1536" height="1024" loading="lazy">
+    <figure class="cenote">
+      <img class="band band-cenote" src="assets/cenote.webp" alt="" width="1536" height="1024" loading="lazy">
+      <figcaption><b data-i18n="s1t"></b><span data-i18n="s1"></span></figcaption>
+    </figure>
   </section>
 
   <section class="gallery" aria-roledescription="carousel">
@@ -254,6 +265,7 @@ footer .pyramid{color:var(--gold)}
           <div class="track" id="track">
             <div class="slide" style="--sb-side:#102227;--sb-mid:#1D2B29;--bot:#081820"><video class="app" data-src="assets/video-home.mp4" poster="assets/schermata-home.jpg" muted playsinline preload="none" width="393" height="759"></video></div>
             <div class="slide" style="--sb-side:#102227;--sb-mid:#1D2B29;--bot:#081820"><video class="app" data-src="assets/video-respiro.mp4" poster="assets/schermata-respiro.jpg" muted loop playsinline preload="none" width="393" height="759"></video></div>
+            <div class="slide" style="--sb-side:#102227;--sb-mid:#1D2B29;--bot:#0A1E26"><img class="app" src="assets/schermata-medita.jpg" alt="" width="393" height="759" loading="lazy"></div>
             <div class="slide" style="--sb-side:#102227;--sb-mid:#1D2B29;--bot:#0A1E26"><video class="app" data-src="assets/video-completa.mp4" poster="assets/schermata-completa.jpg" muted playsinline preload="none" width="393" height="759"></video></div>
             <div class="slide" style="--sb-side:#002117;--sb-mid:#002117;--bot:#0A291E"><img class="app" src="assets/schermata-sellos.jpg" alt="" width="393" height="759" loading="lazy"></div>
             <div class="slide" style="--sb-side:#002117;--sb-mid:#002117;--bot:#002117"><video class="app" data-src="assets/video-cielo.mp4" poster="assets/schermata-cielo.jpg" muted playsinline preload="none" width="393" height="759"></video></div>
@@ -273,13 +285,14 @@ footer .pyramid{color:var(--gold)}
         <ol class="cap-list" id="caps">
         <li><button type="button" data-go="0"><b data-i18n="g1"></b><span data-i18n="g1s"></span></button></li>
         <li><button type="button" data-go="1"><b data-i18n="g2"></b><span data-i18n="g2s"></span></button></li>
-        <li><button type="button" data-go="2"><b data-i18n="g3"></b><span data-i18n="g3s"></span></button></li>
-        <li><button type="button" data-go="3"><b data-i18n="g4"></b><span data-i18n="g4s"></span></button></li>
-        <li><button type="button" data-go="4"><b data-i18n="g5"></b><span data-i18n="g5s"></span></button></li>
+        <li><button type="button" data-go="2"><b data-i18n="gM"></b><span data-i18n="gMs"></span></button></li>
+        <li><button type="button" data-go="3"><b data-i18n="g3"></b><span data-i18n="g3s"></span></button></li>
+        <li><button type="button" data-go="4"><b data-i18n="g4"></b><span data-i18n="g4s"></span></button></li>
+        <li><button type="button" data-go="5"><b data-i18n="g5"></b><span data-i18n="g5s"></span></button></li>
         </ol>
         <div class="nav">
           <button type="button" class="arrow" id="prev" data-i18n-label="prev"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 4.5 7.5 12l7.5 7.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <span class="dots" id="dots"><i data-go="0"></i><i data-go="1"></i><i data-go="2"></i><i data-go="3"></i><i data-go="4"></i></span>
+          <span class="dots" id="dots"><i data-go="0"></i><i data-go="1"></i><i data-go="2"></i><i data-go="3"></i><i data-go="4"></i><i data-go="5"></i></span>
           <button type="button" class="arrow" id="next" data-i18n-label="next"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 4.5 16.5 12 9 19.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
         </div>
       </div>
@@ -355,7 +368,7 @@ const T = {
     s3t:"Imparare di nuovo a respirare",s3:"Nella fretta di ogni giorno, molti di noi hanno dimenticato come si respira bene: il respiro si fa corto e veloce, senza che ce ne accorgiamo. ÓOL ti guida con respirazioni diverse per momenti diversi: per ritrovare la calma, per dormire, per concentrarti o per quando arriva l'ansia.",
     vT:"Voci",vP:"Una voce calma per guidare le meditazioni, in italiano, spagnolo o inglese. Per il provino basta una stanza silenziosa.",vCta:"Candidati come voce",
     mT:"Musica",vTag:"Meditazione guidata · narrazione",mTag:"Sound healing · ambient · musica lenta",mP:"Se la tua musica nasce per dare calma, qui può accompagnare altre persone a respirare, riposare e dormire. Cerchiamo brani lenti, strumentali o con voce leggera. Ogni brano porta il tuo nome e i tuoi link.",mCta:"Proponi i tuoi brani",
-    g1:"La home",g1s:"Un tocco e inizi.",g2:"Respirare",g2s:"Una luce segue l'onda del tuo respiro.",g3:"A fine sessione",g3s:"Un animale e una frase da portare con te.",g4:"I sigilli",g4s:"Venti glifi di ispirazione maya che si sbloccano man mano che i respiri si sommano.",g5:"Il tuo cielo",g5s:"Una stella per ogni giorno di pratica.",
+    g1:"La home",g1s:"Un tocco e inizi.",g2:"Respirare",g2s:"Una luce segue l'onda del tuo respiro.",gM:"Meditare",gMs:"Diciassette meditazioni fra luoghi veri e miti maya. Si aprono una alla volta, con la pratica.",g3:"A fine sessione",g3s:"Un animale e una frase da portare con te.",g4:"I sigilli",g4s:"Venti glifi di ispirazione maya che si sbloccano man mano che i respiri si sommano.",g5:"Il tuo cielo",g5s:"Una stella per ogni giorno di pratica.",
     whyLabel:"Perché partecipare",
     tP:"Né voce né musica? Stiamo preparando la versione di prova: prova ÓOL prima che esca.",tCta:"Voglio provarla",prev:"Schermata precedente",next:"Schermata successiva",
     cLabel:"Unisciti a noi",cT:"La tua voce o la tua musica in ÓOL?",cP:"Compilare il modulo richiede pochi minuti. Ascoltiamo ogni proposta.",
@@ -372,7 +385,7 @@ alt:["Una donna, controluce al tramonto sul mare di Tulum, espira verso il cielo
     s3t:"Volver a aprender a respirar",s3:"Con la prisa de todos los días, muchos hemos olvidado cómo respirar bien: la respiración se vuelve corta y rápida sin que nos demos cuenta. ÓOL te guía con respiraciones distintas para distintos momentos: para recuperar la calma, para dormir, para concentrarte o para cuando llega la ansiedad.",
     vT:"Voces",vP:"Una voz tranquila para guiar las meditaciones, en italiano, español o inglés. Para la prueba basta un cuarto silencioso.",vCta:"Postúlate como voz",
     mT:"Música",vTag:"Meditación guiada · narración",mTag:"Sound healing · ambient · música lenta",mP:"Si tu música nace para dar calma, aquí puede acompañar a otras personas a respirar, descansar y dormir. Buscamos piezas lentas, instrumentales o con voz suave. Cada pieza lleva tu nombre y tus enlaces.",mCta:"Propón tu música",
-    g1:"Inicio",g1s:"Un toque y empiezas.",g2:"Respirar",g2s:"Una luz sigue la ola de tu respiración.",g3:"Al terminar",g3s:"Un animal y una frase para llevarte.",g4:"Los sellos",g4s:"Veinte glifos de inspiración maya que se desbloquean conforme sumas respiraciones.",g5:"Tu cielo",g5s:"Una estrella por cada día de práctica.",
+    g1:"Inicio",g1s:"Un toque y empiezas.",g2:"Respirar",g2s:"Una luz sigue la ola de tu respiración.",gM:"Meditar",gMs:"Diecisiete meditaciones entre lugares reales y mitos mayas. Se abren una por una, con la práctica.",g3:"Al terminar",g3s:"Un animal y una frase para llevarte.",g4:"Los sellos",g4s:"Veinte glifos de inspiración maya que se desbloquean conforme sumas respiraciones.",g5:"Tu cielo",g5s:"Una estrella por cada día de práctica.",
     whyLabel:"Por qué participar",
     tP:"¿Ni voz ni música? Estamos preparando la versión de prueba: prueba ÓOL antes de que salga.",tCta:"Quiero probarla",prev:"Pantalla anterior",next:"Pantalla siguiente",
     cLabel:"Súmate",cT:"¿Tu voz o tu música en ÓOL?",cP:"Llenar el formulario toma unos minutos. Escuchamos cada propuesta.",
@@ -389,7 +402,7 @@ alt:["Una mujer, a contraluz al atardecer sobre el mar de Tulum, exhala hacia el
     s3t:"Learning to breathe again",s3:"In the rush of everyday life, many of us have forgotten how to breathe well: our breathing turns fast and shallow without our noticing. ÓOL guides you through different ways of breathing for different moments: to find calm again, to sleep, to focus, or for when anxiety rises.",
     vT:"Voices",vP:"A calm voice to guide the meditations, in Italian, Spanish, or English. For the audition, a quiet room is enough.",vCta:"Apply as a voice",
     mT:"Music",vTag:"Guided meditation · narration",mTag:"Sound healing · ambient · slow music",mP:"If your music is made to bring calm, here it can keep others company as they breathe, rest, and fall asleep. We're looking for slow tracks, instrumental or with a soft voice. Every track carries your name and your links.",mCta:"Submit your music",
-    g1:"Home",g1s:"One tap and you begin.",g2:"Breathing",g2s:"A light follows the wave of your breath.",g3:"After a session",g3s:"An animal and a line to take with you.",g4:"The seals",g4s:"Twenty Maya-inspired glyphs that unlock as your breaths add up.",g5:"Your sky",g5s:"One star for every day of practice.",
+    g1:"Home",g1s:"One tap and you begin.",g2:"Breathing",g2s:"A light follows the wave of your breath.",gM:"Meditating",gMs:"Seventeen meditations set in real places and Maya myths. They open up one by one as you practice.",g3:"After a session",g3s:"An animal and a line to take with you.",g4:"The seals",g4s:"Twenty Maya-inspired glyphs that unlock as your breaths add up.",g5:"Your sky",g5s:"One star for every day of practice.",
     whyLabel:"Why take part",
     tP:"Not a voice or a musician? We're preparing the test version: try ÓOL before it's out.",tCta:"I want to try it",prev:"Previous screen",next:"Next screen",
     cLabel:"Join us",cT:"Your voice or your music in ÓOL?",cP:"The form takes a few minutes. We listen to every submission.",
