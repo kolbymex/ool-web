@@ -102,6 +102,14 @@ html{scroll-behavior:smooth}
 .close .btns{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:12px}
 .close .cta{margin:0}
 
+/* in fondo, per chi non manda né voce né musica: la lista della versione di prova */
+.tester{margin-top:34px;padding:26px 24px;border-radius:20px;border:1px solid rgba(232,178,77,.28);background:rgba(15,42,51,.6);max-width:560px;display:flex;flex-direction:column;align-items:center;gap:10px}
+.tester .q{font:500 13px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0}
+.tester h3{font-family:var(--serif);font-weight:400;font-size:28px;margin:0;color:var(--cream)}
+.tester p{margin:0}
+.tester .ghost{margin-top:8px;display:inline-flex;align-items:center;gap:10px;font-family:var(--serif);font-size:18px;color:var(--gold);text-decoration:none;border:1px solid var(--gold);padding:11px 22px;border-radius:999px;transition:background .3s}
+.tester .ghost:hover{background:rgba(232,178,77,.12)}
+
 /* dentro ÓOL: tre colonne di solo testo */
 .inside{margin-top:88px}
 .inside h2{font-size:clamp(32px,4vw,46px);margin-top:12px}
@@ -321,6 +329,12 @@ footer .pyramid{color:var(--gold)}
       <a class="cta" data-form="voice"><span data-i18n="vCta"></span><span aria-hidden="true">→</span></a>
       <a class="cta" data-form="music"><span data-i18n="mCta"></span><span aria-hidden="true">→</span></a>
     </div>
+    <div class="tester">
+      <p class="q" data-i18n="tQ"></p>
+      <h3 data-i18n="tT"></h3>
+      <p data-i18n="tP"></p>
+      <a class="ghost" data-form="beta"><span data-i18n="tCta"></span><span aria-hidden="true">→</span></a>
+    </div>
   </section>
 
   <footer>
@@ -332,8 +346,8 @@ footer .pyramid{color:var(--gold)}
 <script>
 /* Link ai moduli di candidatura su Zite: Voces e Música (in tutti e due si può registrare dal telefono). Un link vuoto spegne il suo pulsante.
    I moduli si aprono nella lingua della pagina (?lang=en / ?lang=it; senza, in spagnolo). */
-const FORMS = { voice: "https://wn5necedxf.zite.so", music: "https://un5ubaw73y.zite.so" };
-const FORM_LANG = { voice: true, music: true };
+const FORMS = { voice: "https://wn5necedxf.zite.so", music: "https://un5ubaw73y.zite.so", beta: "https://wnhrv15on4.zite.so" };
+const FORM_LANG = { voice: true, music: true, beta: true };
 
 const T = {
   it:{eyebrow:"Cerchiamo voci e musica",h1:"Ogni respiro ha un suono. <em>Può essere il tuo.</em>",
@@ -346,7 +360,8 @@ const T = {
     vT:"Voci",vP:"Una voce calma per guidare le meditazioni, in italiano, spagnolo o inglese. Per il provino basta una stanza silenziosa.",vCta:"Candidati come voce",
     mT:"Musica",vTag:"Meditazione guidata · narrazione",mTag:"Sound healing · ambient · musica lenta",mP:"Se la tua musica nasce per dare calma, qui può accompagnare altre persone a respirare, riposare e dormire. Cerchiamo brani lenti, strumentali o con voce leggera. Ogni brano porta il tuo nome e i tuoi link.",mCta:"Proponi i tuoi brani",
     g1:"La home",g1s:"Un tocco e inizi.",g2:"Respirare",g2s:"Una luce segue l'onda del tuo respiro.",g3:"A fine sessione",g3s:"Un animale e una frase da portare con te.",g4:"I sigilli",g4s:"Venti glifi di ispirazione maya che si sbloccano man mano che i respiri si sommano.",g5:"Il tuo cielo",g5s:"Una stella per ogni giorno di pratica.",
-    whyLabel:"Perché partecipare",prev:"Schermata precedente",next:"Schermata successiva",
+    whyLabel:"Perché partecipare",
+    tQ:"Né voce né musica?",tT:"Prova ÓOL prima che esca.",tP:"Stiamo preparando la versione di prova per iPhone; quella per Android arriverà dopo. Lasciaci i tuoi dati e ti avvisiamo appena è pronta.",tCta:"Voglio provarla",prev:"Schermata precedente",next:"Schermata successiva",
     cLabel:"Unisciti a noi",cT:"La tua voce o la tua musica in ÓOL?",cP:"Compilare il modulo richiede pochi minuti. Ascoltiamo ogni proposta.",
     w1t:"In tutto il mondo",w1:"Il tuo nome dentro ÓOL, che arriverà sull'App Store in oltre 170 paesi. Si scaricherà gratis.",
     w2t:"Far conoscere Tulum",w2:"Un progetto di qui, che porta lontano la voce di questa terra.",
@@ -362,7 +377,8 @@ alt:["Una donna, controluce al tramonto sul mare di Tulum, espira verso il cielo
     vT:"Voces",vP:"Una voz tranquila para guiar las meditaciones, en italiano, español o inglés. Para la prueba basta un cuarto silencioso.",vCta:"Postúlate como voz",
     mT:"Música",vTag:"Meditación guiada · narración",mTag:"Sound healing · ambient · música lenta",mP:"Si tu música nace para dar calma, aquí puede acompañar a otras personas a respirar, descansar y dormir. Buscamos piezas lentas, instrumentales o con voz suave. Cada pieza lleva tu nombre y tus enlaces.",mCta:"Propón tu música",
     g1:"Inicio",g1s:"Un toque y empiezas.",g2:"Respirar",g2s:"Una luz sigue la ola de tu respiración.",g3:"Al terminar",g3s:"Un animal y una frase para llevarte.",g4:"Los sellos",g4s:"Veinte glifos de inspiración maya que se desbloquean conforme sumas respiraciones.",g5:"Tu cielo",g5s:"Una estrella por cada día de práctica.",
-    whyLabel:"Por qué participar",prev:"Pantalla anterior",next:"Pantalla siguiente",
+    whyLabel:"Por qué participar",
+    tQ:"¿Ni voz ni música?",tT:"Prueba ÓOL antes de que salga.",tP:"Estamos preparando la versión de prueba para iPhone; la de Android llegará después. Déjanos tus datos y te avisamos en cuanto esté lista.",tCta:"Quiero probarla",prev:"Pantalla anterior",next:"Pantalla siguiente",
     cLabel:"Súmate",cT:"¿Tu voz o tu música en ÓOL?",cP:"Llenar el formulario toma unos minutos. Escuchamos cada propuesta.",
     w1t:"En todo el mundo",w1:"Tu nombre en ÓOL, que llegará al App Store en más de 170 países. Se podrá descargar gratis.",
     w2t:"Dar a conocer Tulum",w2:"Un proyecto de aquí, que lleva lejos la voz de esta tierra.",
@@ -378,7 +394,8 @@ alt:["Una mujer, a contraluz al atardecer sobre el mar de Tulum, exhala hacia el
     vT:"Voices",vP:"A calm voice to guide the meditations, in Italian, Spanish, or English. For the audition, a quiet room is enough.",vCta:"Apply as a voice",
     mT:"Music",vTag:"Guided meditation · narration",mTag:"Sound healing · ambient · slow music",mP:"If your music is made to bring calm, here it can keep others company as they breathe, rest, and fall asleep. We're looking for slow tracks, instrumental or with a soft voice. Every track carries your name and your links.",mCta:"Submit your music",
     g1:"Home",g1s:"One tap and you begin.",g2:"Breathing",g2s:"A light follows the wave of your breath.",g3:"After a session",g3s:"An animal and a line to take with you.",g4:"The seals",g4s:"Twenty Maya-inspired glyphs that unlock as your breaths add up.",g5:"Your sky",g5s:"One star for every day of practice.",
-    whyLabel:"Why take part",prev:"Previous screen",next:"Next screen",
+    whyLabel:"Why take part",
+    tQ:"Not a voice or a musician?",tT:"Try ÓOL before it's out.",tP:"We're preparing the test version for iPhone; Android will follow. Leave us your details and we'll let you know as soon as it's ready.",tCta:"I want to try it",prev:"Previous screen",next:"Next screen",
     cLabel:"Join us",cT:"Your voice or your music in ÓOL?",cP:"The form takes a few minutes. We listen to every submission.",
     w1t:"Around the world",w1:"Your name in ÓOL, coming to the App Store in more than 170 countries. Free to download.",
     w2t:"Sharing Tulum",w2:"A project from here, carrying the voice of this land far and wide.",
