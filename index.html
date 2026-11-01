@@ -1,20 +1,596 @@
 <!doctype html>
 <html lang="es">
 <meta charset="utf-8">
-<title>ÓOL</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>ÓOL — Back to Your Breath</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="ÓOL es una app de respiración y meditación hecha en Tulum: una herramienta para volver a tu respiración.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ÓOL">
 <meta property="og:locale" content="es_MX">
-<meta property="og:title" content="Colabora con ÓOL">
-<meta property="og:description" content="ÓOL busca voces y músicos para sus sesiones de respiración, desde Tulum.">
-<meta property="og:url" content="https://kolbymex.github.io/ool-web/colabora/">
-<meta property="og:image" content="https://kolbymex.github.io/ool-web/colabora/assets/anteprima.jpg?v=94fa9db9">
+<meta property="og:title" content="ÓOL — Back to Your Breath">
+<meta property="og:description" content="Un poco de selva, de cenote y de silencio, para llevar en el bolsillo. Respiración y meditación desde Tulum.">
+<meta property="og:url" content="https://kolbymex.github.io/ool-web/">
+<meta property="og:image" content="https://kolbymex.github.io/ool-web/assets/anteprima.jpg?v=aa769902">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="ÓOL. Buscamos voces y música. Cada respiración tiene un sonido. Puede ser el tuyo.">
+<meta property="og:image:alt" content="ÓOL. Respiración y meditación. Un poco de selva, de cenote y de silencio, para llevar en el bolsillo.">
 <meta name="twitter:card" content="summary_large_image">
-<meta http-equiv="refresh" content="0; url=colabora/">
-<link rel="canonical" href="colabora/">
-<link rel="icon" href="colabora/assets/icona.svg" type="image/svg+xml">
-<p><a href="colabora/">Colabora con ÓOL</a></p>
+<link rel="icon" href="assets/icona.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icona-180.png">
+<style>
+/* Fraunces e Inter caricati dal sito stesso, non da Google: solo i caratteri latini (licenza OFL in assets/fonts) */
+@font-face{font-family:'Fraunces';font-style:italic;font-weight:300;font-display:swap;src:url(assets/fonts/fraunces-italic-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Fraunces';font-style:italic;font-weight:300;font-display:swap;src:url(assets/fonts/fraunces-italic-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Fraunces';font-style:normal;font-weight:300;font-display:swap;src:url(assets/fonts/fraunces-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Fraunces';font-style:normal;font-weight:300;font-display:swap;src:url(assets/fonts/fraunces-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Fraunces';font-style:normal;font-weight:400;font-display:swap;src:url(assets/fonts/fraunces-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Fraunces';font-style:normal;font-weight:400;font-display:swap;src:url(assets/fonts/fraunces-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Inter';font-style:normal;font-weight:300;font-display:swap;src:url(assets/fonts/inter-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Inter';font-style:normal;font-weight:300;font-display:swap;src:url(assets/fonts/inter-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url(assets/fonts/inter-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url(assets/fonts/inter-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url(assets/fonts/inter-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url(assets/fonts/inter-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+/* Pagina di presentazione dell'app: stesso stile di Colabora (logo, foto larghe, carosello con le schermate vere). Palette "Notte tropicale" dell'app, un solo tema scuro voluto. */
+:root{
+  color-scheme:dark;
+  --bg:#16353F; --bg-2:#1A3E49; --bg-3:#112C35;
+  --gold:#E8B24D; --cream:#F5EFE2; --text:#EDE7DA; --muted:#93AEAA; --dim:#6E8B87;
+  --line:rgba(232,178,77,.16); --line-2:rgba(232,178,77,.45);
+  --serif:"Fraunces",Georgia,"Times New Roman",serif;
+  --sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html{background:var(--bg)}
+body{margin:0;color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.6;font-weight:300;-webkit-font-smoothing:antialiased;
+  padding-left:max(20px, env(safe-area-inset-left, 0px));padding-right:max(20px, env(safe-area-inset-right, 0px));
+  background:radial-gradient(90% 38% at 50% 0%, rgba(232,178,77,.12), transparent 62%),linear-gradient(180deg,var(--bg) 0%,var(--bg-2) 55%,var(--bg-3) 100%);background-color:var(--bg)}
+.wrap{max-width:1160px;margin:0 auto}
+h1,h2{font-family:var(--serif);font-weight:300;margin:0;color:var(--cream);text-wrap:balance;line-height:1.08}
+p{margin:0}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+
+.langs{position:absolute;top:calc(18px + env(safe-area-inset-top, 0px));right:max(20px, env(safe-area-inset-right, 0px));display:flex;gap:2px;border:1px solid var(--line-2);border-radius:999px;padding:3px}
+.langs button{font:500 13px/1 var(--sans);letter-spacing:.1em;border:0;background:none;color:var(--dim);padding:10px 13px;border-radius:999px;cursor:pointer}
+.langs button[aria-pressed="true"]{background:rgba(232,178,77,.16);color:var(--gold)}
+
+header{display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px;padding-block:72px 48px}
+.logo{display:flex;flex-direction:column;align-items:center;gap:14px;margin-bottom:22px}
+.logo svg{width:104px;height:auto;display:block}
+.logo img{height:52px;width:auto;display:block}
+.eyebrow{font-size:13px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+h1{font-size:clamp(40px,6vw,72px);letter-spacing:-.01em;max-width:13ch}
+h1 em{display:block;font-style:italic;color:var(--gold)}
+.poem{font-family:var(--serif);font-style:italic;font-size:26px;line-height:1.4;color:var(--cream);max-width:22em;margin:4px 0 6px;text-wrap:balance}
+.lede{font-size:18px;color:var(--muted);max-width:32em;text-wrap:pretty}
+
+.band{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;object-position:50% 85%;border-radius:22px}
+
+.roles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:88px}
+/* pannelli con le figure ritagliate: la figura sta in alto su un bagliore caldo, il testo sotto su fondo pieno.
+   Ogni immagine è appoggiata al bordo dove è tagliata (la voce in basso a destra, l'handpan in alto a sinistra) */
+.panel{position:relative;overflow:hidden;border-radius:22px;min-width:0;display:flex;flex-direction:column;
+  background:radial-gradient(80% 50% at 62% 30%,rgba(232,178,77,.22),transparent 70%),linear-gradient(180deg,#0F2D36 0%,#0B2229 100%);
+  box-shadow:0 30px 60px -34px rgba(0,0,0,.85)}
+.panel .art{position:relative;aspect-ratio:10/9;overflow:hidden}
+/* foto intere (la stanza e la luce fanno parte del racconto), sfumate in basso nel colore del pannello */
+.panel .art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.panel .art-voz img{object-position:50% 40%}
+.panel .art-musica img{object-position:50% 55%}
+.panel .art::after{content:"";position:absolute;left:0;right:0;bottom:0;height:42%;background:linear-gradient(180deg,rgba(13,39,48,0),rgba(13,39,48,.7) 55%,#0D2730)}
+.panel .tx{flex:1;padding:6px 32px 32px;display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+.panel .cta{margin-top:auto}
+.panel h2{font-size:clamp(34px,3.6vw,46px)}
+.panel p{color:var(--text);font-size:17px;max-width:28em}
+.panel .eyebrow{color:var(--gold);font-size:13px;letter-spacing:.12em;margin-bottom:-6px}
+.cta{margin-top:6px;display:inline-flex;align-items:center;gap:10px;font-family:var(--serif);font-size:18px;text-decoration:none;color:var(--cream);
+  border:1px solid var(--line-2);background:rgba(232,178,77,.18);padding:12px 22px;border-radius:999px;transition:border-color .3s,background .3s}
+.cta:hover{border-color:var(--gold);background:rgba(232,178,77,.26)}
+.cta[aria-disabled="true"]{opacity:.6;pointer-events:none}
+
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+/* in alto, due tasti che portano giù a Voces e a Música; in fondo, una chiusura con i due pulsanti dei moduli */
+.jump{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:6px}
+.jump a{font:500 15px/1 var(--sans);color:var(--cream);text-decoration:none;border:1px solid rgba(232,178,77,.45);border-radius:999px;padding:12px 18px;transition:border-color .3s}
+.jump a:hover{border-color:var(--gold)}
+.jump a [aria-hidden]{color:var(--gold);margin-left:6px}
+.close{margin-top:88px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px}
+.close h2{font-size:clamp(32px,4vw,46px)}
+.close p:not(.eyebrow){color:var(--muted);font-size:18px;max-width:30em;margin:0}
+.close .btns{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:12px}
+.close .cta{margin:0}
+
+/* in fondo, per chi non manda né voce né musica: la lista della versione di prova */
+.tester{margin-top:30px;max-width:520px;display:flex;flex-direction:column;align-items:center;gap:6px}
+.tester p{margin:0;color:var(--muted);font-size:16px}
+.tester a{font-family:var(--serif);font-size:17px;color:var(--gold);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px;padding:8px 4px}
+.tester a:hover{text-decoration-thickness:2px}
+
+/* sotto la prima foto: cosa vuol dire ÓOL, come una voce di dizionario */
+.meaning{margin:44px auto 0;max-width:760px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px}
+.meaning .def b{font-style:normal;font-weight:400;color:var(--gold);letter-spacing:.02em}
+.meaning .def{margin:0;font-family:var(--serif);font-style:italic;font-size:28px;line-height:1.45;color:var(--cream);text-wrap:balance}
+
+/* dentro ÓOL: resta solo "Imparare di nuovo a respirare"; "Suoni veri" sta sopra la foto del cenote, le meditazioni nel carosello */
+.inside .breathe{margin-top:18px;max-width:38em;font-size:23px;line-height:1.6;color:var(--text)}
+.cenote{position:relative;margin:56px 0 0}
+.cenote .band-cenote{margin-top:0}
+.cenote::after{content:"";position:absolute;inset:0;border-radius:22px;background:linear-gradient(180deg,rgba(8,24,30,0) 45%,rgba(8,24,30,.82) 100%);pointer-events:none}
+.cenote figcaption{position:absolute;left:36px;right:36px;bottom:30px;z-index:1;display:flex;flex-direction:column;gap:4px;max-width:30em}
+.cenote figcaption b{font-family:var(--serif);font-weight:400;font-size:32px;color:var(--cream)}
+.cenote figcaption span{font-size:20px;color:var(--text)}
+
+/* dentro ÓOL: tre colonne di solo testo */
+.inside{margin-top:88px}
+.inside h2{font-size:clamp(32px,4vw,46px);margin-top:12px}
+.cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;margin-top:36px}
+.cols h3{font-family:var(--serif);font-weight:400;font-size:24px;margin:0;color:var(--cream);line-height:1.2}
+.cols p{margin-top:8px;color:var(--muted);font-size:17px}
+/* la foto del cenote chiude "Dentro de ÓOL": larga, con il tamburo e il flauto a sinistra */
+.band-cenote{margin-top:56px;aspect-ratio:21/9;object-position:50% 80%}
+.extra{margin-top:36px;padding-top:22px;border-top:1px solid var(--line);font-family:var(--serif);font-size:24px;line-height:1.45;color:var(--cream)}
+/* perché partecipare: un pannello come Voces e Música, i tre motivi a sinistra e la donna che respira a destra, appoggiata al bordo in basso dove è tagliata */
+.why{margin-top:96px}
+.why ul{list-style:none;margin:22px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px}
+.why-card{position:relative;overflow:hidden;border-radius:22px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);align-items:end;
+  background:radial-gradient(55% 75% at 76% 42%,rgba(232,178,77,.24),transparent 70%),linear-gradient(180deg,#0F2D36 0%,#0B2229 100%);box-shadow:0 30px 60px -34px rgba(0,0,0,.85)}
+.why-card .why-tx{align-self:center;padding:52px 0 52px 52px}
+.why-card ul{grid-template-columns:1fr;gap:26px}
+.why-card .why-art{position:relative;padding:28px 26px 0 0}
+.why-card .why-art img{display:block;width:100%;height:auto;filter:drop-shadow(0 18px 30px rgba(0,0,0,.35))}
+.why h3{font-family:var(--serif);font-weight:400;font-size:26px;margin:0;color:var(--cream);line-height:1.2}
+.why li p{margin-top:6px;color:var(--muted);font-size:17px}
+/* due telefoni visti di fronte, disegnati in CSS. Le misure interne sono quelle di un iPhone da 393 × 852 pt,
+   espresse in --u (un punto dello schermo), così il telefono si scala con la colonna */
+/* carosello: un telefono grande; le schermate scorrono da sole (ferme se si riduce il movimento),
+   si spostano col dito o con le frecce, e l'elenco accanto dice cosa si sta guardando */
+.gallery{margin-top:80px}
+.carousel{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:64px;align-items:center;justify-content:center;max-width:900px;margin:0 auto}
+.phone{margin:0;min-width:0;container-type:inline-size}
+.phone .screen{touch-action:pan-y;user-select:none}
+.track{display:flex;height:100%;transition:transform .7s cubic-bezier(.45,.05,.2,1)}
+.slide{position:relative;flex:0 0 100%;height:100%;background:var(--bot,#081820)}
+.slide::before{content:"";position:absolute;left:0;right:0;top:0;height:calc(59 * var(--u));background:linear-gradient(90deg,var(--sb-side,#102227),var(--sb-mid,#1D2B29) 50%,var(--sb-side,#102227))}
+.cap-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.cap-list button{all:unset;box-sizing:border-box;width:100%;cursor:pointer;display:flex;flex-direction:column;gap:4px;padding:14px 18px;border-radius:16px;border-left:2px solid transparent;transition:background .3s,border-color .3s}
+.cap-list button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.cap-list b{font-family:var(--serif);font-weight:400;font-size:22px;color:var(--muted);transition:color .3s}
+.cap-list span{font-size:16px;line-height:1.5;color:var(--muted);opacity:.75;transition:color .3s,opacity .3s}
+.cap-list li.on button{background:rgba(232,178,77,.08);border-left-color:var(--gold)}
+.cap-list li.on b{color:var(--cream)}
+.cap-list li.on span{color:var(--text);opacity:1}
+.nav{display:none;align-items:center;justify-content:center;gap:18px;margin-top:14px}
+.arrow{border:1px solid var(--line-2);background:none;color:var(--cream);width:44px;height:44px;padding:0;border-radius:50%;display:grid;place-items:center;cursor:pointer}
+.arrow svg{width:24px;height:24px}
+.dots{display:flex;gap:8px}
+.dots i{width:8px;height:8px;border-radius:50%;background:var(--line-2);cursor:pointer}
+.dots i.on{background:var(--gold)}
+.phone .frame{padding:3.4cqw;border-radius:15cqw;background:linear-gradient(150deg,#465052,#1a2122 35%,#0d1314 70%,#2a3335);
+  box-shadow:inset 0 0 0 .5cqw rgba(255,255,255,.07),0 34px 60px -30px rgba(0,0,0,.9)}
+.phone .screen{--u:calc(93.2cqw / 393);position:relative;aspect-ratio:393/852;border-radius:11.6cqw;overflow:hidden;background:var(--bot,#081820)}
+.phone .app{position:absolute;left:0;top:calc(59 * var(--u));width:100%;height:calc(759 * var(--u));display:block;max-width:none;object-fit:cover}
+.phone .sb{position:absolute;left:0;top:0;width:100%;height:calc(59 * var(--u));pointer-events:none}
+.phone .clock{position:absolute;left:0;width:calc(118 * var(--u));top:calc(17 * var(--u));text-align:center;font:600 calc(17 * var(--u))/1.4 -apple-system,"SF Pro Text","Helvetica Neue",Arial,sans-serif;color:#fff}
+.phone .island{position:absolute;left:calc(134 * var(--u));top:calc(11 * var(--u));width:calc(125 * var(--u));height:calc(37 * var(--u));border-radius:calc(19 * var(--u));background:#000}
+.phone .icons{position:absolute;right:calc(26 * var(--u));top:calc(21 * var(--u));display:flex;gap:calc(6 * var(--u));align-items:center}
+.phone .icons svg{display:block;height:calc(12 * var(--u));width:auto}
+.phone .home{position:absolute;left:calc(129 * var(--u));bottom:calc(8 * var(--u));width:calc(135 * var(--u));height:calc(5 * var(--u));border-radius:calc(3 * var(--u));background:rgba(255,255,255,.82)}
+footer{padding-block:88px 44px;display:flex;flex-direction:column;align-items:center;gap:14px;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+footer .pyramid{color:var(--gold)}
+
+@media (max-width:820px){
+  .cols{grid-template-columns:1fr;gap:36px}
+  .why{margin-top:72px}
+  .why ul{grid-template-columns:1fr;gap:28px}
+  /* su telefono le schermate scorrono di lato, una alla volta */
+  /* su telefono: il telefono al centro, sotto solo la didascalia della schermata che si vede, i punti e le frecce */
+  .carousel{grid-template-columns:1fr;gap:20px}
+  .phone.big{width:min(78%,300px);justify-self:center}
+  .cap-list{display:grid}
+  .cap-list li{grid-area:1/1}
+  .cap-list li:not(.on){visibility:hidden}
+  .cap-list button{border-left:0;text-align:center;align-items:center;padding:6px 8px}
+  .cap-list li.on button{background:none}
+  .nav{display:flex}
+  header{padding-block:76px 36px}
+  .logo{gap:12px}
+  .logo svg{width:80px}
+  .logo img{height:40px}
+  .band{aspect-ratio:4/3;object-position:30% 50%}
+  .band-cenote{margin-top:40px;object-position:22% 50%}
+  /* sul telefono la foto è più bassa: la scritta va sotto, non sopra il tamburo */
+  .inside .breathe{font-size:18px}
+  .meaning{margin-top:34px}
+  .meaning .def{font-size:22px}
+  .poem{font-size:22px}
+  .cenote{margin-top:40px}
+  .cenote::after{display:none}
+  .cenote figcaption{position:static;margin-top:16px;padding:0 4px}
+  .cenote figcaption span{font-size:17px}
+  .cenote figcaption b{font-size:24px}
+  /* su telefono la donna va sopra il testo, come le figure di Voces e Música, e il bagliore sale dietro di lei */
+  .why-card{grid-template-columns:1fr;background:radial-gradient(80% 34% at 55% 20%,rgba(232,178,77,.22),transparent 70%),linear-gradient(180deg,#0F2D36 0%,#0B2229 100%)}
+  .why-card .why-art{order:-1;padding:18px 10px 0}
+  .why-card .why-art::after{content:"";position:absolute;left:0;right:0;bottom:0;height:22%;background:linear-gradient(180deg,rgba(11,34,41,0),#0D2730)}
+  .why-card .why-tx{padding:6px 22px 28px}
+  .why-card ul{gap:22px}
+  .roles{grid-template-columns:1fr;gap:20px}
+  /* su telefono il testo va sotto la foto: sopra coprirebbe metà dell'immagine */
+  .panel .tx{padding:4px 22px 26px}
+}
+@media (prefers-reduced-motion:reduce){.cta,.track,.cap-list button{transition:none}}
+
+/* in alto: il pulsante della prova (pieno) e "come funziona" (solo bordo) */
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;align-items:center;margin-top:10px}
+.hero-btns .cta{margin:0}
+.hero-btns .jump{margin:0}
+.hero-btns .jump a{padding:15px 20px}
+/* le quattro respirazioni: nome, a cosa serve, ritmo */
+.progs{list-style:none;margin:40px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.progs li{border:1px solid var(--line);border-radius:18px;padding:22px 22px 20px;background:rgba(9,30,37,.35);display:flex;flex-direction:column;gap:6px}
+.progs b{font-family:var(--serif);font-weight:400;font-size:26px;color:var(--cream);line-height:1.15}
+.progs span{color:var(--text);font-size:17px}
+.progs small{margin-top:auto;padding-top:10px;font-size:15px;letter-spacing:.12em;color:var(--gold)}
+/* Meditar: testo a sinistra, il telefono con El Camino Maya a destra */
+.medita{margin-top:96px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,300px);gap:64px;align-items:center;max-width:980px;margin-inline:auto}
+.medita h2{font-size:clamp(32px,4vw,46px);margin-top:12px}
+.medita p:not(.eyebrow){margin-top:16px;font-size:20px;line-height:1.6;color:var(--text);max-width:30em}
+.medita .names{font-family:var(--serif);font-style:italic;color:var(--cream)}
+.sec-head{text-align:center;display:flex;flex-direction:column;align-items:center;gap:12px;margin-bottom:44px}
+.sec-head h2{font-size:clamp(32px,4vw,46px)}
+.gallery .extra{max-width:900px;margin:48px auto 0;text-align:center}
+.promises{margin-top:96px}
+/* "Así es ÓOL" in un pannello come quello di Colabora: i tre punti a sinistra, la donna che respira a destra, appoggiata al bordo in basso */
+.why-card{position:relative;overflow:hidden;border-radius:22px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);align-items:end;
+  background:radial-gradient(55% 75% at 76% 42%,rgba(232,178,77,.24),transparent 70%),linear-gradient(180deg,#0F2D36 0%,#0B2229 100%);box-shadow:0 30px 60px -34px rgba(0,0,0,.85)}
+.why-card .why-tx{align-self:center;padding:52px 0 52px 52px}
+.why-card ul{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:26px}
+.why-card h3{font-family:var(--serif);font-weight:400;font-size:26px;margin:0;color:var(--cream);line-height:1.2}
+.why-card li p{margin-top:6px;color:var(--muted);font-size:17px}
+.why-card .why-art{position:relative;padding:28px 26px 0 0}
+.why-card .why-art img{display:block;width:100%;height:auto;filter:drop-shadow(0 18px 30px rgba(0,0,0,.35))}
+/* voci e musica: le due foto di Colabora, dopo la chiusura, per chi vuole partecipare */
+.colab{margin-top:96px}
+.colab .sec-head h2{font-size:clamp(30px,3.6vw,42px);margin-top:12px}
+.colab .roles{margin-top:28px}
+.promises .cols{margin-top:28px}
+footer a{color:var(--muted);text-underline-offset:4px}
+@media (max-width:820px){
+  .progs{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .progs li{padding:18px 16px 16px}
+  .progs b{font-size:22px}
+  .progs span{font-size:16px}
+  .medita{grid-template-columns:1fr;gap:32px;margin-top:72px}
+  .medita .phone{width:min(70%,270px);justify-self:center}
+  .medita p:not(.eyebrow){font-size:18px}
+  .promises{margin-top:72px}
+  .why-card{grid-template-columns:1fr;background:radial-gradient(80% 34% at 55% 20%,rgba(232,178,77,.22),transparent 70%),linear-gradient(180deg,#0F2D36 0%,#0B2229 100%)}
+  .why-card .why-art{order:-1;padding:18px 10px 0}
+  .why-card .why-art::after{content:"";position:absolute;left:0;right:0;bottom:0;height:22%;background:linear-gradient(180deg,rgba(11,34,41,0),#0D2730)}
+  .why-card .why-tx{padding:6px 22px 28px}
+  .why-card ul{gap:22px}
+  .colab{margin-top:72px}
+}
+</style>
+
+<div class="langs" role="group" aria-label="Language">
+  <button id="lang-es" data-lang="es">ES</button>
+  <button id="lang-en" data-lang="en">EN</button>
+  <button id="lang-it" data-lang="it">IT</button>
+</div>
+
+<div class="wrap">
+  <header>
+    <div class="logo" aria-label="ÓOL" role="img">
+      <!-- il logo dell'icona (sole e quattro barre, OOL-icona/ool-sole-barre.svg): stessa forma e stessi colori dell'intro Alba dell'app -->
+      <svg viewBox="204 235 846 795" aria-hidden="true">
+        <defs>
+          <linearGradient id="sole" gradientUnits="userSpaceOnUse" x1="0" y1="235" x2="0" y2="658">
+            <stop offset="0" stop-color="#FDEDB2"/><stop offset="1" stop-color="#F4BD38"/>
+          </linearGradient>
+        </defs>
+        <path d="M204 658A423 423 0 0 1 1050 658Z" fill="url(#sole)"/>
+        <rect x="204" y="701" width="846" height="50" rx="25" fill="#F4BE39"/>
+        <rect x="282" y="794" width="690" height="50" rx="25" fill="#ADC860"/>
+        <rect x="376" y="887" width="502" height="50" rx="25" fill="#33AD73"/>
+        <rect x="486" y="980" width="282" height="50" rx="25" fill="#1F926A"/>
+      </svg>
+      <img src="assets/ool-scritta.png" alt="" width="485" height="235">
+    </div>
+    <p class="eyebrow" data-i18n="eyebrow"></p>
+    <h1 data-i18n-html="h1"></h1>
+    <p class="lede" data-i18n="lede"></p>
+    <div class="hero-btns">
+      <a class="cta" data-form="beta"><span data-i18n="tCta"></span><span aria-hidden="true">→</span></a>
+      <nav class="jump"><a href="#respirar"><span data-i18n="how"></span><span aria-hidden="true">↓</span></a></nav>
+    </div>
+  </header>
+
+  <div class="band-wrap">
+    <img class="band" src="assets/foto-respiro.webp" alt="" width="1536" height="1024">
+  </div>
+
+  <section class="meaning">
+    <p class="def" data-i18n-html="nDef"></p>
+  </section>
+
+  <section class="inside" id="respirar">
+    <h2 data-i18n="s3t"></h2>
+    <p class="breathe" data-i18n="s3"></p>
+    <ul class="progs">
+      <li><b data-i18n="p1"></b><span data-i18n="p1s"></span><small>4 · 6</small></li>
+      <li><b data-i18n="p2"></b><span data-i18n="p2s"></span><small>4 · 7 · 8</small></li>
+      <li><b data-i18n="p3"></b><span data-i18n="p3s"></span><small>4 · 4 · 4 · 4</small></li>
+      <li><b data-i18n="p4"></b><span data-i18n="p4s"></span><small>5 · 5</small></li>
+    </ul>
+  </section>
+
+  <section class="medita">
+    <div>
+      <p class="eyebrow" data-i18n="mdLabel"></p>
+      <h2 data-i18n="mdT"></h2>
+      <p data-i18n-html="mdP"></p>
+    </div>
+    <div class="phone" aria-hidden="true"><div class="frame"><div class="screen">
+      <div class="slide" style="--sb-side:#102227;--sb-mid:#1D2B29;--bot:#0A1E26"><img class="app" src="assets/schermata-medita.jpg" alt="" width="393" height="759" loading="lazy"></div>
+          <div class="sb">
+            <span class="clock">9:41</span>
+            <span class="island"></span>
+            <span class="icons" aria-hidden="true">
+                <svg viewBox="0 0 18 12" width="18" height="12"><rect x="0" y="8" width="3" height="4" rx="1" fill="#fff"/><rect x="5" y="5.5" width="3" height="6.5" rx="1" fill="#fff"/><rect x="10" y="3" width="3" height="9" rx="1" fill="#fff"/><rect x="15" y="0" width="3" height="12" rx="1" fill="#fff"/></svg>
+                <svg viewBox="0 0 16 12" width="16" height="12"><path d="M8 11.5 5.7 9.2a3.3 3.3 0 0 1 4.6 0zM3.3 6.8a6.6 6.6 0 0 1 9.4 0l-1.4 1.4a4.6 4.6 0 0 0-6.6 0zM.9 4.4a10 10 0 0 1 14.2 0l-1.4 1.4a8 8 0 0 0-11.4 0z" fill="#fff"/></svg>
+                <svg viewBox="0 0 27 13" width="27" height="13"><rect x=".5" y=".5" width="23" height="12" rx="3.5" fill="none" stroke="#fff" stroke-opacity=".4"/><rect x="2" y="2" width="20" height="9" rx="2.2" fill="#fff"/><path d="M25 4.5v4a2 2 0 0 0 0-4z" fill="#fff" fill-opacity=".45"/></svg>
+              </span>
+          </div>
+          <span class="home"></span>
+    </div></div></div>
+  </section>
+
+  <figure class="cenote">
+    <img class="band band-cenote" src="assets/cenote.webp" alt="" width="1536" height="1024" loading="lazy">
+    <figcaption><b data-i18n="s1t"></b><span data-i18n="s1"></span></figcaption>
+  </figure>
+
+  <section class="gallery" aria-roledescription="carousel">
+    <div class="sec-head">
+      <p class="eyebrow" data-i18n="gLabel"></p>
+      <h2 data-i18n="gT"></h2>
+    </div>
+    <div class="carousel">
+      <div class="phone big" aria-hidden="true"><div class="frame"><div class="screen" id="screen">
+          <div class="track" id="track">
+            <div class="slide" style="--sb-side:#102227;--sb-mid:#1D2B29;--bot:#081820"><video class="app" data-src="assets/video-home.mp4" poster="assets/schermata-home.jpg" muted playsinline preload="none" width="393" height="759"></video></div>
+            <div class="slide" style="--sb-side:#102227;--sb-mid:#1D2B29;--bot:#081820"><video class="app" data-src="assets/video-respiro.mp4" poster="assets/schermata-respiro.jpg" muted loop playsinline preload="none" width="393" height="759"></video></div>
+            <div class="slide" style="--sb-side:#102227;--sb-mid:#1D2B29;--bot:#0A1E26"><video class="app" data-src="assets/video-completa.mp4" poster="assets/schermata-completa.jpg" muted playsinline preload="none" width="393" height="759"></video></div>
+            <div class="slide" style="--sb-side:#002117;--sb-mid:#002117;--bot:#0A291E"><img class="app" src="assets/schermata-sellos.jpg" alt="" width="393" height="759" loading="lazy"></div>
+            <div class="slide" style="--sb-side:#002117;--sb-mid:#002117;--bot:#002117"><video class="app" data-src="assets/video-cielo.mp4" poster="assets/schermata-cielo.jpg" muted playsinline preload="none" width="393" height="759"></video></div>
+          </div>
+          <div class="sb">
+            <span class="clock">9:41</span>
+            <span class="island"></span>
+            <span class="icons" aria-hidden="true">
+                <svg viewBox="0 0 18 12" width="18" height="12"><rect x="0" y="8" width="3" height="4" rx="1" fill="#fff"/><rect x="5" y="5.5" width="3" height="6.5" rx="1" fill="#fff"/><rect x="10" y="3" width="3" height="9" rx="1" fill="#fff"/><rect x="15" y="0" width="3" height="12" rx="1" fill="#fff"/></svg>
+                <svg viewBox="0 0 16 12" width="16" height="12"><path d="M8 11.5 5.7 9.2a3.3 3.3 0 0 1 4.6 0zM3.3 6.8a6.6 6.6 0 0 1 9.4 0l-1.4 1.4a4.6 4.6 0 0 0-6.6 0zM.9 4.4a10 10 0 0 1 14.2 0l-1.4 1.4a8 8 0 0 0-11.4 0z" fill="#fff"/></svg>
+                <svg viewBox="0 0 27 13" width="27" height="13"><rect x=".5" y=".5" width="23" height="12" rx="3.5" fill="none" stroke="#fff" stroke-opacity=".4"/><rect x="2" y="2" width="20" height="9" rx="2.2" fill="#fff"/><path d="M25 4.5v4a2 2 0 0 0 0-4z" fill="#fff" fill-opacity=".45"/></svg>
+              </span>
+          </div>
+          <span class="home"></span>
+      </div></div></div>
+      <div class="captions">
+        <ol class="cap-list" id="caps">
+        <li><button type="button" data-go="0"><b data-i18n="g1"></b><span data-i18n="g1s"></span></button></li>
+        <li><button type="button" data-go="1"><b data-i18n="g2"></b><span data-i18n="g2s"></span></button></li>
+        <li><button type="button" data-go="2"><b data-i18n="g3"></b><span data-i18n="g3s"></span></button></li>
+        <li><button type="button" data-go="3"><b data-i18n="g4"></b><span data-i18n="g4s"></span></button></li>
+        <li><button type="button" data-go="4"><b data-i18n="g5"></b><span data-i18n="g5s"></span></button></li>
+        </ol>
+        <div class="nav">
+          <button type="button" class="arrow" id="prev" data-i18n-label="prev"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 4.5 7.5 12l7.5 7.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <span class="dots" id="dots"><i data-go="0"></i><i data-go="1"></i><i data-go="2"></i><i data-go="3"></i><i data-go="4"></i></span>
+          <button type="button" class="arrow" id="next" data-i18n-label="next"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 4.5 16.5 12 9 19.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </div>
+      </div>
+    </div>
+    <p class="extra" data-i18n="extra"></p>
+  </section>
+
+  <section class="promises why-card">
+    <div class="why-tx">
+      <p class="eyebrow" data-i18n="prLabel"></p>
+      <ul>
+        <li><h3 data-i18n="pr1t"></h3><p data-i18n="pr1"></p></li>
+        <li><h3 data-i18n="pr2t"></h3><p data-i18n="pr2"></p></li>
+        <li><h3 data-i18n="pr3t"></h3><p data-i18n="pr3"></p></li>
+      </ul>
+    </div>
+    <div class="why-art"><img src="assets/respira.webp" alt="" width="1330" height="1182" loading="lazy"></div>
+  </section>
+
+  <section class="close">
+    <p class="eyebrow" data-i18n="cLabel"></p>
+    <h2 data-i18n="cT"></h2>
+    <p data-i18n="cP"></p>
+    <div class="btns">
+      <a class="cta" data-form="beta"><span data-i18n="tCta"></span><span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+
+  <section class="colab">
+    <div class="sec-head">
+      <p class="eyebrow" data-i18n="colCta"></p>
+      <h2 data-i18n="colP"></h2>
+    </div>
+    <div class="roles">
+      <div class="panel">
+        <div class="art art-voz"><img src="assets/voz-casa.webp" alt="" width="1086" height="1448" loading="lazy"></div>
+        <div class="tx">
+          <p class="eyebrow" data-i18n="vTag"></p>
+          <h2 data-i18n="vT"></h2>
+          <p data-i18n="vP"></p>
+          <a class="cta" data-link="colabora" data-hash="#voci"><span data-i18n="vCta"></span><span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="art art-musica"><img src="assets/handpan-casa.webp" alt="" width="1254" height="1254" loading="lazy"></div>
+        <div class="tx">
+          <p class="eyebrow" data-i18n="mTag"></p>
+          <h2 data-i18n="mT"></h2>
+          <p data-i18n="mP"></p>
+          <a class="cta" data-link="colabora" data-hash="#musica"><span data-i18n="mCta"></span><span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <svg class="pyramid" width="30" height="30" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 20h18 M4.6 20l1.5-4.2h11.8l1.5 4.2 M6.8 15.8l1.3-3.6h7.8l1.3 3.6 M8.8 12.2l1.1-3.1h4.2l1.1 3.1 M10.4 9.1V6.6h3.2v2.5 M12 20v-7.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span>Design in Tulum, México</span>
+    <a data-link="aviso" data-i18n="aviso"></a>
+  </footer>
+</div>
+
+<script>
+/* Link ai moduli di candidatura su Zite: Voces e Música (in tutti e due si può registrare dal telefono). Un link vuoto spegne il suo pulsante.
+   I moduli si aprono nella lingua della pagina (?lang=en / ?lang=it; senza, in spagnolo). */
+/* la prova (modulo Zite "Prueba ÓOL"), Colabora e l'aviso. I moduli si aprono nella lingua della pagina (?lang=en / ?lang=it) */
+const FORMS = { beta: "https://wnhrv15on4.zite.so" };
+const FORM_LANG = { beta: true };
+const LINKS = { colabora: "https://kolbymex.github.io/ool-web/colabora/", aviso: "https://kolbymex.github.io/ool-web/aviso/" };
+
+const T = {
+  es:{eyebrow:"Respiración y meditación · Tulum",h1:"Un poco de selva, de cenote y de silencio, <em>para llevar en el bolsillo.</em>",
+    lede:"ÓOL es una app, pero sobre todo una herramienta para volver a tu respiración. Nace en Tulum, entre el mar y las historias del mundo maya.",
+    how:"Cómo funciona",
+    nDef:"<b>ÓOL</b>, en lengua maya, es lo que queda cuando la respiración vuelve al centro: el ánimo, el corazón, la energía.",
+    s3t:"Volver a aprender a respirar",s3:"Con la prisa de todos los días, muchos hemos olvidado cómo respirar bien: la respiración se vuelve corta y rápida sin que nos demos cuenta. En ÓOL una luz marca el ritmo; tú solo la sigues. Hay una respiración para cada momento:",
+    p1:"Calma",p1s:"Relájate y desacelera",p2:"Sueño",p2s:"Prepárate para dormir",p3:"Enfoque",p3s:"Más claridad y concentración",p4:"Estrés",p4s:"Libera la tensión",
+    mdLabel:"Meditar",mdT:"El Camino Maya",mdP:"Meditaciones inspiradas en lugares y mitos mayas: <span class=\"names\">el Cenote escondido, la Pluma de quetzal, Kukulkán, Ix Chel, la Ceiba, el Cacao…</span> Se abren una a una, conforme practicas.",
+    s1t:"Sonidos reales",s1:"Queremos que cada sonido de ÓOL venga de un lugar real. Los estamos grabando poco a poco: la lluvia ya está en la app.",
+    gLabel:"Tu práctica",gT:"Cada respiración suma",
+    g1:"Inicio",g1s:"Un toque y empiezas.",g2:"Respirar",g2s:"Una ola de luz que sube y baja: marca cuándo inhalar y cuándo exhalar.",g3:"Al terminar",g3s:"Un animal y una frase para llevarte.",g4:"Los sellos",g4s:"Veinte glifos de inspiración maya que se desbloquean con tus respiraciones.",g5:"Tu cielo",g5s:"Una estrella por cada día de práctica.",
+    extra:"Y cada vez que abres la app, una frase para empezar; y un diario para guardar tus propias palabras.",
+    prLabel:"Así es ÓOL",
+    pr1t:"Sin anuncios",pr1:"Nada entre tú y tu respiración.",
+    pr2t:"Sin registro",pr2:"No necesitas crear una cuenta. Tu práctica y tus palabras se quedan en tu celular; solo nos llegan estadísticas anónimas de uso, y puedes desactivarlas.",
+    pr3t:"Hecha en Tulum",pr3:"Un proyecto pequeño e independiente, hecho por gente que vive aquí.",
+    cLabel:"Versión de prueba",cT:"Respira con ÓOL antes de que salga",cP:"Estamos preparando la primera versión. Déjanos tu correo y te avisamos cuando puedas probarla.",
+    tCta:"Quiero probarla",colP:"¿Haces música o guías meditaciones?",colCta:"Colabora con ÓOL",vTag:"Meditación guiada · narración",vT:"Voces",vP:"Una voz tranquila para guiar las meditaciones, en italiano, español o inglés. Para la prueba basta un cuarto silencioso.",vCta:"Postúlate como voz",mTag:"Sound healing · ambient · música lenta",mT:"Música",mP:"Si tu música nace para dar calma, aquí puede acompañar a otras personas a respirar, descansar y dormir.",mCta:"Propón tu música",aviso:"Aviso de privacidad",
+    prev:"Pantalla anterior",next:"Pantalla siguiente",
+    alt:["Una mujer, a contraluz al atardecer sobre el mar de Tulum, exhala hacia el cielo","Un tambor y una flauta junto al agua de un cenote","Una mujer con los ojos cerrados respira, sentada en meditación","Una mujer con audífonos habla frente al micrófono","Manos que tocan un handpan bajo una luz cálida"]},
+  en:{eyebrow:"Breathing and meditation · Tulum",h1:"A little jungle, a little cenote and a little silence, <em>to carry in your pocket.</em>",
+    lede:"ÓOL is an app, but above all a tool for coming back to your breath. It was born in Tulum, between the sea and the stories of the Maya world.",
+    how:"How it works",
+    nDef:"<b>ÓOL</b>, in the Maya language, is what remains when the breath returns to center: the spirit, the heart, the energy.",
+    s3t:"Learning to breathe again",s3:"In the rush of everyday life, many of us have forgotten how to breathe well: our breathing turns fast and shallow without our noticing. In ÓOL a light sets the pace; all you do is follow it. There's a way of breathing for every moment:",
+    p1:"Calm",p1s:"Slow down and relax",p2:"Sleep",p2s:"Get ready for sleep",p3:"Focus",p3s:"More clarity and concentration",p4:"Stress",p4s:"Release the tension",
+    mdLabel:"Meditate",mdT:"El Camino Maya",mdP:"Meditations inspired by Maya places and myths: <span class=\"names\">Cenote escondido, Pluma de quetzal, Kukulkán, Ix Chel, Ceiba, Cacao…</span> They open one by one as you practice.",
+    s1t:"Real sounds",s1:"We want every sound in ÓOL to come from a real place. We're recording them little by little: the rain is already in the app.",
+    gLabel:"Your practice",gT:"Every breath adds up",
+    g1:"Home",g1s:"One tap and you begin.",g2:"Breathing",g2s:"A wave of light that rises and falls, showing when to breathe in and out.",g3:"After a session",g3s:"An animal and a line to take with you.",g4:"The seals",g4s:"Twenty Maya-inspired glyphs that unlock with your breaths.",g5:"Your sky",g5s:"One star for every day of practice.",
+    extra:"And each time you open the app, a line to begin with, plus a journal for your own words.",
+    prLabel:"This is ÓOL",
+    pr1t:"No ads",pr1:"Nothing between you and your breath.",
+    pr2t:"No account",pr2:"No sign-up needed. Your practice and your words stay on your phone; we only receive anonymous usage statistics, and you can turn them off.",
+    pr3t:"Made in Tulum",pr3:"A small, independent project, made by people who live here.",
+    cLabel:"Beta version",cT:"Breathe with ÓOL before it's out",cP:"We're preparing the first version. Leave us your email and we'll let you know when you can try it.",
+    tCta:"I'd like to try it",colP:"Do you make music or guide meditations?",colCta:"Collaborate with ÓOL",vTag:"Guided meditation · narration",vT:"Voices",vP:"A calm voice to guide the meditations, in Italian, Spanish, or English. For the audition, a quiet room is enough.",vCta:"Apply as a voice",mTag:"Sound healing · ambient · slow music",mT:"Music",mP:"If your music is made to bring calm, here it can keep others company as they breathe, rest, and fall asleep.",mCta:"Submit your music",aviso:"Privacy notice",
+    prev:"Previous screen",next:"Next screen",
+    alt:["A woman, backlit at sunset over the sea in Tulum, breathes out toward the sky","A drum and a flute by the water of a cenote","A woman with her eyes closed breathes, sitting in meditation","A woman with headphones speaking into a microphone","Hands playing a handpan in warm light"]},
+  it:{eyebrow:"Respirazione e meditazione · Tulum",h1:"Un po' di selva, di cenote e di silenzio, <em>da portare in tasca.</em>",
+    lede:"ÓOL è un'app, ma soprattutto uno strumento per tornare al tuo respiro. Nasce a Tulum, tra il mare e le storie del mondo maya.",
+    how:"Come funziona",
+    nDef:"<b>ÓOL</b>, in lingua maya, è ciò che resta quando il respiro torna al centro: l'animo, il cuore, l'energia.",
+    s3t:"Imparare di nuovo a respirare",s3:"Nella fretta di ogni giorno, molti di noi hanno dimenticato come si respira bene: il respiro si fa corto e veloce, senza che ce ne accorgiamo. In ÓOL una luce segna il ritmo; a te basta seguirla. C'è un respiro per ogni momento:",
+    p1:"Calmo",p1s:"Rallenta e rilassati",p2:"Sonno",p2s:"Preparati a dormire",p3:"Focus",p3s:"Più lucidità e concentrazione",p4:"Stress",p4s:"Scarica la tensione",
+    mdLabel:"Meditare",mdT:"El Camino Maya",mdP:"Meditazioni ispirate a luoghi e miti maya: <span class=\"names\">Cenote escondido, Pluma de quetzal, Kukulkán, Ix Chel, Ceiba, Cacao…</span> Si aprono una alla volta, man mano che pratichi.",
+    s1t:"Suoni veri",s1:"Vogliamo che ogni suono di ÓOL venga da un luogo vero. Li stiamo registrando poco a poco: la pioggia è già nell'app.",
+    gLabel:"La tua pratica",gT:"Ogni respiro conta",
+    g1:"Home",g1s:"Un tocco e inizi.",g2:"Respirare",g2s:"Un'onda di luce che sale e scende: indica quando inspirare e quando espirare.",g3:"A fine sessione",g3s:"Un animale e una frase da portare con te.",g4:"I sigilli",g4s:"Venti glifi di ispirazione maya che si sbloccano con i tuoi respiri.",g5:"Il tuo cielo",g5s:"Una stella per ogni giorno di pratica.",
+    extra:"E ogni volta che apri l'app, una frase per cominciare; e un diario per custodire le tue parole.",
+    prLabel:"Così è ÓOL",
+    pr1t:"Niente pubblicità",pr1:"Nulla fra te e il tuo respiro.",
+    pr2t:"Niente account",pr2:"Non serve registrarsi. La tua pratica e le tue parole restano sul telefono; ci arrivano solo statistiche anonime d'uso, e puoi disattivarle.",
+    pr3t:"Fatta a Tulum",pr3:"Un progetto piccolo e indipendente, fatto da chi vive qui.",
+    cLabel:"Versione di prova",cT:"Respira con ÓOL prima che esca",cP:"Stiamo preparando la prima versione. Lasciaci la tua email e ti avvisiamo quando potrai provarla.",
+    tCta:"Voglio provarla",colP:"Fai musica o guidi meditazioni?",colCta:"Collabora con ÓOL",vTag:"Meditazione guidata · narrazione",vT:"Voci",vP:"Una voce calma per guidare le meditazioni, in italiano, spagnolo o inglese. Per il provino basta una stanza silenziosa.",vCta:"Candidati come voce",mTag:"Sound healing · ambient · musica lenta",mT:"Musica",mP:"Se la tua musica nasce per dare calma, qui può accompagnare altre persone a respirare, riposare e dormire.",mCta:"Proponi i tuoi brani",aviso:"Informativa sulla privacy",
+    prev:"Schermata precedente",next:"Schermata successiva",
+    alt:["Una donna, controluce al tramonto sul mare di Tulum, espira verso il cielo","Un tamburo e un flauto accanto all'acqua di un cenote","Una donna a occhi chiusi respira, seduta in meditazione","Una donna con le cuffie parla al microfono","Mani che suonano un handpan nella luce calda"]}
+};
+
+/* ?lang=en / ?lang=it apre la pagina in quella lingua; senza, segue la lingua del telefono o del computer (spagnolo se non è inglese o italiano) */
+const pick0 = l => ({ en: "en", it: "it", es: "es" })[(l || "").slice(0, 2).toLowerCase()];
+let lang = pick0(new URLSearchParams(location.search).get("lang")) || pick0(navigator.language) || "es";
+
+function render(){
+  const t = T[lang];
+  document.documentElement.lang = lang;
+  document.querySelectorAll("[data-i18n]").forEach(el=>{ el.textContent = t[el.dataset.i18n]; });
+  document.querySelectorAll("[data-i18n-html]").forEach(el=>{ el.innerHTML = t[el.dataset.i18nHtml]; });
+  document.querySelectorAll("[data-i18n-label]").forEach(el=>{ el.setAttribute("aria-label", t[el.dataset.i18nLabel]); });
+  [document.querySelector(".band"), document.querySelector(".band-cenote"), document.querySelector(".why-art img"), ...document.querySelectorAll(".panel img")].forEach((img,i)=>{ img.alt = t.alt[i]; });
+  document.querySelectorAll("[data-link]").forEach(a=>{ a.href = LINKS[a.dataset.link] + (a.dataset.link === "colabora" && lang !== "es" ? "?lang=" + lang : a.dataset.link === "aviso" && lang !== "es" ? "#en" : "") + (a.dataset.hash || ""); });
+  document.querySelectorAll(".langs button").forEach(b=>b.setAttribute("aria-pressed", b.dataset.lang===lang));
+  document.querySelectorAll("[data-form]").forEach(a=>{
+    const u = FORMS[a.dataset.form];
+    if(u){ a.href = FORM_LANG[a.dataset.form] && lang !== "es" ? u + "?lang=" + lang : u; a.removeAttribute("aria-disabled"); a.removeAttribute("tabindex");
+      /* sul sito il modulo si apre nella stessa scheda, così "indietro" riporta qui; dentro una cornice (la copia su claude.ai) in una scheda nuova */
+      if (window.top !== window.self) { a.target = "_blank"; a.rel = "noopener"; } }
+    else { a.removeAttribute("href"); a.setAttribute("aria-disabled","true"); a.setAttribute("tabindex","-1"); }
+  });
+}
+document.querySelectorAll(".langs button").forEach(b=>b.onclick=()=>{
+  lang = b.dataset.lang;
+  render();
+});
+render();
+
+/* carosello: una schermata con un video resta finché il video finisce (la respirazione, che si ripete,
+   per un respiro: 10 s), le altre 4,5 s. La respirazione parte da 0,5 s: il primo mezzo secondo è la
+   dissolvenza che chiude il giro. Gli altri video partono dall'inizio e si fermano sull'ultimo fotogramma */
+const track = document.getElementById("track"), screen = document.getElementById("screen");
+const slides = [...track.querySelectorAll(".slide")];
+const caps = [...document.querySelectorAll("#caps li")], dots = [...document.querySelectorAll("#dots i")];
+const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+let cur = 0, timer = 0, held = false;
+function video(i){ return slides[i].querySelector("video"); }
+function show(i){
+  cur = (i + slides.length) % slides.length;
+  track.style.transform = `translateX(${-100 * cur}%)`;
+  caps.forEach((c, k) => c.classList.toggle("on", k === cur));
+  dots.forEach((d, k) => d.classList.toggle("on", k === cur));
+  slides.forEach((s, k) => { const v = video(k); if (v && k !== cur) v.pause(); });
+  const v = video(cur);
+  if (v && !still) {
+    if (!v.src) { v.src = v.dataset.src; v.load(); }
+    try { v.currentTime = v.loop ? 0.5 : 0; } catch (e) {}
+    v.play().catch(() => {});
+  }
+  schedule();
+}
+function schedule(){
+  clearTimeout(timer);
+  if (still || held) return;
+  const v = video(cur);
+  timer = setTimeout(() => show(cur + 1), !v || still ? 4500 : v.loop ? 9500 : 10000);
+}
+/* chi tocca prende il controllo: l'avanzamento automatico riparte dopo una pausa */
+function pick(i){ held = true; show(i); clearTimeout(pick.t); pick.t = setTimeout(() => { held = false; schedule(); }, 9000); }
+document.querySelectorAll("[data-go]").forEach(el => el.addEventListener("click", () => pick(+el.dataset.go)));
+document.getElementById("prev").onclick = () => pick(cur - 1);
+document.getElementById("next").onclick = () => pick(cur + 1);
+let x0 = null;
+screen.addEventListener("pointerdown", e => { x0 = e.clientX; });
+screen.addEventListener("pointerup", e => { if (x0 === null) return; const dx = e.clientX - x0; x0 = null; if (Math.abs(dx) > 30) pick(cur + (dx < 0 ? 1 : -1)); });
+const car = document.querySelector(".carousel");
+car.addEventListener("mouseenter", () => { held = true; clearTimeout(timer); });
+car.addEventListener("mouseleave", () => { held = false; schedule(); });
+/* il carosello parte quando lo si vede, non prima */
+if ("IntersectionObserver" in window) {
+  let started = false;
+  new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; show(0); } }, { threshold: .35 }).observe(car);
+  caps[0].classList.add("on"); dots[0].classList.add("on");
+} else show(0);
+</script>

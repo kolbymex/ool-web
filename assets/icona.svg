@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="fondo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#14272B"/><stop offset=".5" stop-color="#0E2831"/><stop offset="1" stop-color="#09212A"/>
+    </linearGradient>
+    <linearGradient id="ool-sole" gradientUnits="userSpaceOnUse" x1="0" y1="235" x2="0" y2="658">
+      <stop offset="0" stop-color="#FDEDB2"/><stop offset="1" stop-color="#F4BD38"/>
+    </linearGradient>
+  </defs>
+  <rect width="1024" height="1024" fill="url(#fondo)"/>
+  <!-- il logo largo 737 px (72%), centrato -->
+  <svg x="143.5" y="165.7" width="737" height="692.6" viewBox="204 235 846 795">
+    <path d="M204 658A423 423 0 0 1 1050 658Z" fill="url(#ool-sole)"/>
+    <rect x="204" y="701" width="846" height="50" rx="25" fill="#F4BE39"/>
+    <rect x="282" y="794" width="690" height="50" rx="25" fill="#ADC860"/>
+    <rect x="376" y="887" width="502" height="50" rx="25" fill="#33AD73"/>
+    <rect x="486" y="980" width="282" height="50" rx="25" fill="#1F926A"/>
+  </svg>
+</svg>
