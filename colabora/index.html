@@ -428,7 +428,9 @@ alt:["A woman, backlit at sunset over the sea in Tulum, breathes out toward the 
 
 /* la pagina si apre in spagnolo: cerchiamo soprattutto collaboratori che parlano spagnolo.
    ?lang=en / ?lang=it (per esempio tornando da un modulo) la apre in quella lingua */
-let lang = ({ en: "en", it: "it" })[new URLSearchParams(location.search).get("lang")] || "es";
+/* lingua: ?lang=, altrimenti quella del telefono (chi scrive a mano l'indirizzo letto in una storia non ha ?lang), altrimenti spagnolo */
+const pick0 = l => ({ en: "en", it: "it", es: "es" })[(l || "").slice(0, 2).toLowerCase()];
+let lang = pick0(new URLSearchParams(location.search).get("lang")) || pick0(navigator.language) || "es";
 
 function render(){
   const t = T[lang];
